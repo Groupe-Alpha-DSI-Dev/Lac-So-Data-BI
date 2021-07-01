@@ -7,12 +7,12 @@
   DTS:CreatorName="ALPHA\DIAWA"
   DTS:DTSID="{5FB6FD43-7428-4412-9A62-97B3638977FB}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LastModifiedProductVersion="15.0.2000.166"
   DTS:LocaleID="1036"
   DTS:ObjectName="Référentiel"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{F2C5743C-8BC0-4697-95F6-D14670046702}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{67BD2D9E-45D6-44DB-869C-028BDBCB7AA3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,6 +23,8 @@
       DTS:ObjectName="LAC_REFERENTIEL">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_REFERENTIEL;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -3765,13 +3767,13 @@ where [refTable].[DepartementCode] = ?</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncate DimCommune"
+      DTS:refId="Package\Truncate  DimCommune"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
       DTS:DTSID="{DA27FB98-4FA7-4AC7-9FE7-85325CA48B3D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate DimCommune"
+      DTS:ObjectName="Truncate  DimCommune"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -3849,12 +3851,12 @@ where [refTable].[DepartementCode] = ?</property>
       DTS:From="Package\Copy DimNAF"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 1"
-      DTS:To="Package\Truncate DimCommune" />
+      DTS:To="Package\Truncate  DimCommune" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
       DTS:CreationName=""
       DTS:DTSID="{06D4EC6A-683A-458B-8BE8-FFAC57F9DF3C}"
-      DTS:From="Package\Truncate DimCommune"
+      DTS:From="Package\Truncate  DimCommune"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 2"
       DTS:To="Package\Copy DimCommune" />
@@ -3904,27 +3906,35 @@ where [refTable].[DepartementCode] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="200.8,41.6"
+          Size="200.666666666667,41.3333333333334"
           Id="Package\Copy DimCommune"
           TopLeft="207.857146396929,301.538238959288" />
         <NodeLayout
-          Size="200.8,41.6"
+          Size="185.333333333334,41.3333333333334"
+          Id="Package\Copy DimDepartement"
+          TopLeft="504.285722873649,39.1382338543255" />
+        <NodeLayout
+          Size="200.666666666667,41.3333333333334"
           Id="Package\Copy DimNAF"
           TopLeft="207.857146396929,127.53235454184" />
         <NodeLayout
-          Size="200.8,41.6"
+          Size="200.666666666667,41.3333333333334"
           Id="Package\Copy DimROME"
           TopLeft="502.142865694299,208.658825760152" />
         <NodeLayout
-          Size="200.8,41.6"
-          Id="Package\Truncate DimCommune"
+          Size="194.666666666667,42.6666666666667"
+          Id="Package\Truncate  DimCommune"
           TopLeft="207.857146396929,214.535296750564" />
         <NodeLayout
-          Size="200.8,41.6"
+          Size="203.333333333334,41.3333333333334"
+          Id="Package\Truncate DimDepartement"
+          TopLeft="496.4285798827,127.961764231313" />
+        <NodeLayout
+          Size="200.666666666667,41.3333333333334"
           Id="Package\Truncate DimNAF"
           TopLeft="207.857146396929,40.5294123331156" />
         <NodeLayout
-          Size="200.8,41.6"
+          Size="200.666666666667,41.3333333333334"
           Id="Package\Truncate DimROME"
           TopLeft="495.71429415625,297.48235613714" />
         <EdgeLayout
@@ -3951,18 +3961,18 @@ where [refTable].[DepartementCode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 1]"
-          TopLeft="308.257146396929,169.13235454184">
+          TopLeft="306.690479730262,168.865687875173">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.402942208724"
+              EndConnector="0,45.6696088753907"
               Start="0,0"
-              End="0,37.902942208724">
+              End="0,38.1696088753907">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.902942208724" />
+                    End="0,38.1696088753907" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3973,18 +3983,18 @@ where [refTable].[DepartementCode] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="308.257146396929,256.135296750564">
+          TopLeft="306.690479730262,257.201963417231">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45.402942208724"
+              EndConnector="0,44.3362755420573"
               Start="0,0"
-              End="0,37.902942208724">
+              End="0,36.8362755420573">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.902942208724" />
+                    End="0,36.8362755420573" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4037,14 +4047,6 @@ where [refTable].[DepartementCode] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="203.2,41.6"
-          Id="Package\Truncate DimDepartement"
-          TopLeft="496.4285798827,127.961764231313" />
-        <NodeLayout
-          Size="185.6,41.6"
-          Id="Package\Copy DimDepartement"
-          TopLeft="504.285722873649,39.1382338543255" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 5]"
           TopLeft="600.285722788499,208.658825760152">
@@ -4232,6 +4234,70 @@ where [refTable].[DepartementCode] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Copy DimDepartement">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Copy DimDepartement\datDepartement"
+          TopLeft="148.571431101585,146.823531470909" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Copy DimDepartement\DimDepartement"
+          TopLeft="450.714293389904,144.529413791676" />
+        <EdgeLayout
+          Id="Package\Copy DimDepartement.Paths[Sortie de source OLE DB]"
+          TopLeft="303.771431101585,166.476472631292">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="146.942862288319,0"
+              Start="0,0"
+              End="139.442862288319,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="139.442862288319,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimDepartement\datDepartement">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimDepartement\DimDepartement">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Copy DimNAF">
     <LayoutInfo>
       <GraphLayout
@@ -4348,70 +4414,6 @@ where [refTable].[DepartementCode] = ?</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Copy DimROME\DimROME">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Copy DimDepartement">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Copy DimDepartement\datDepartement"
-          TopLeft="148.571431101585,146.823531470909" />
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\Copy DimDepartement\DimDepartement"
-          TopLeft="450.714293389904,144.529413791676" />
-        <EdgeLayout
-          Id="Package\Copy DimDepartement.Paths[Sortie de source OLE DB]"
-          TopLeft="303.771431101585,166.476472631292">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="146.942862288319,0"
-              Start="0,0"
-              End="139.442862288319,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="139.442862288319,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy DimDepartement\datDepartement">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy DimDepartement\DimDepartement">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
