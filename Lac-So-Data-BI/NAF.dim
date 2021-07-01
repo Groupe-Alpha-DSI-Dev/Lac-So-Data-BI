@@ -1,0 +1,729 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="42753050-179e-42d0-8310-53d85ee5fbb8" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>NAF</ID>
+  <Name>NAF</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="dc7d45d2-1697-41ff-9dc0-85c5b5e71ef0">
+    <DataSourceViewID>LAC DWH SO-DATA</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="c7712f66-0e67-4f60-9172-e5734a8adba7">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="109d4934-f702-42d6-b4af-cea41efe82c7">
+      <ID>NAFKey</ID>
+      <Name>NAFKey</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9268138d-1b18-4ef5-a14e-232b448a2b86">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="125f83fe-d3dd-47a2-83a5-5aec14c40478">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NAFKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="3c613cef-42c1-4286-ae9f-b45df4ecd1eb">
+          <AttributeID>Code</AttributeID>
+          <Name>Code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c4c8c8a7-285e-43ac-96f0-38fd8a895bbe">
+          <AttributeID>Code affichage</AttributeID>
+          <Name>Code affichage</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ad41f0f9-d523-47a2-b340-c1bb89ced13e">
+          <AttributeID>Libellé</AttributeID>
+          <Name>Libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d19c9d55-4276-40b4-b072-179ed8f37597">
+          <AttributeID>Code libellé</AttributeID>
+          <Name>Code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="71181e54-7489-41e8-af07-7956529b220c">
+          <AttributeID>Classe code</AttributeID>
+          <Name>Classe code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="cb20fa55-b707-4353-a4b9-66588d2ffabc">
+          <AttributeID>Classe libellé</AttributeID>
+          <Name>Classe libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="79bbbe4a-71b8-4acf-bdc6-934bb88be9d9">
+          <AttributeID>Classe code libellé</AttributeID>
+          <Name>Classe code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="30f77efb-1ef4-40a1-94a5-ed9dd6a4f7e0">
+          <AttributeID>Groupe code</AttributeID>
+          <Name>Groupe code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4ba3ffad-2b14-4502-935e-c792d8b2d798">
+          <AttributeID>Groupe libellé</AttributeID>
+          <Name>Groupe libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a07100b4-0d36-4123-a692-67674e70baf8">
+          <AttributeID>Groupe code libellé</AttributeID>
+          <Name>Groupe code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d18bcd16-0260-45ac-9828-33f7cca95457">
+          <AttributeID>Division code</AttributeID>
+          <Name>Division code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="55a98186-7e02-4d18-8a13-0c05629e5d70">
+          <AttributeID>Division libellé</AttributeID>
+          <Name>Division libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="439cc46b-76cd-48e2-8ef6-898ba7d25fb9">
+          <AttributeID>Division code libellé</AttributeID>
+          <Name>Division code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="932d4273-7bef-4fea-bc6c-c5fe67194d80">
+          <AttributeID>Section code</AttributeID>
+          <Name>Section code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="31e8db63-abb5-43e5-9a62-71c80680c0ca">
+          <AttributeID>Section libellé</AttributeID>
+          <Name>Section libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b884988c-cfd4-47e4-a8f7-ea8a8c39b54d">
+          <AttributeID>Section code libellé</AttributeID>
+          <Name>Section code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="6eb8e1b5-bff0-4d3f-82fb-435895373248">
+          <AttributeID>NA10 code</AttributeID>
+          <Name>NA10 code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2d9f68b4-2cfe-4cd5-8f06-1578cf062a6d">
+          <AttributeID>NA10 libellé</AttributeID>
+          <Name>NA10 libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b5d49a8b-825b-4e6c-aa47-e1b73d858018">
+          <AttributeID>NA10 code libellé</AttributeID>
+          <Name>NA10 code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b9a1ad88-2208-434f-a434-ae08e0127777">
+          <AttributeID>NA17 code</AttributeID>
+          <Name>NA17 code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b992350d-a81f-4b16-9eb8-878ad2e9a191">
+          <AttributeID>NA17 libelleé</AttributeID>
+          <Name>NA17 libelleé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7a982d9f-3060-4dca-b2ff-93df0411cd8a">
+          <AttributeID>NA17 code libellé</AttributeID>
+          <Name>NA17 code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="aadf4f7c-4c8f-4d30-8b78-1f522edb427f">
+          <AttributeID>NA21 code</AttributeID>
+          <Name>NA21 code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="7ac2b784-c26b-44ac-81ae-2ce108b7eb25">
+          <AttributeID>NA21 libellé</AttributeID>
+          <Name>NA21 libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b9a9e7e7-3fd0-401e-aa03-6f9d8c60b7a9">
+          <AttributeID>NA21 code libellé</AttributeID>
+          <Name>NA21 code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c4e3c9fa-19b8-4a41-89af-8b278fcfb4ff">
+          <AttributeID>NA38 code</AttributeID>
+          <Name>NA38 code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3b24cf80-9c74-4306-ab6d-765e5fc13941">
+          <AttributeID>NA38 libellé</AttributeID>
+          <Name>NA38 libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="3370b443-697c-49a4-a5fd-9decadd41894">
+          <AttributeID>NA38 code libellé</AttributeID>
+          <Name>NA38 code libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f0c2696d-f1fe-4a5f-88a7-326b0100b3d0">
+          <AttributeID>NA88 code</AttributeID>
+          <Name>NA88 code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b790955c-99f4-4d33-b0d4-e4812c5f28e8">
+          <AttributeID>NA88 libellé</AttributeID>
+          <Name>NA88 libellé</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c730af77-9a28-4d2e-bbde-d035deabdce1">
+          <AttributeID>NA88 code libellé</AttributeID>
+          <Name>NA88 code libellé</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf534ac2-0ed3-45d1-a8fa-aaed7f058ee8">
+      <ID>Code</ID>
+      <Name>Code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c0d93942-0677-4228-b424-8f01d52853e5">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="049ab669-8c7c-4b48-be44-77d5332000f2">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fd86c2fb-1421-416a-9143-6feed542450f">
+      <ID>Code affichage</ID>
+      <Name>Code affichage</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="5e237926-f044-45fc-8edc-b4f5ec2e90e8">
+          <DataType>WChar</DataType>
+          <DataSize>6</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cfaa9438-c256-4807-a57a-7fd6e07e41ef">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>CodeAffichage</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="4b645a9d-19a2-423a-a003-441d2adffe1e">
+      <ID>Libellé</ID>
+      <Name>Libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d658eece-a95f-460b-886b-0439d187e316">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b0df81dc-a279-4151-8458-0bdee70372c6">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>Libelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1fbd825c-bc99-45e5-b6b2-f5a9b4e7574c">
+      <ID>Code libellé</ID>
+      <Name>Code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8fabef26-63f7-4ca3-b3ab-6b630ecac270">
+          <DataType>WChar</DataType>
+          <DataSize>207</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="888a8f2f-734d-4896-ac03-f3f535e48753">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>CodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="483a3571-ec39-4b17-85d1-dbd57b011ccc">
+      <ID>Classe code</ID>
+      <Name>Classe code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b2a1ed15-e704-4c07-8904-183ff38f947e">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="18578611-33dd-4d91-945e-cee2a1ead27c">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>ClasseCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7acc6d9b-fb71-4ed3-b6a6-21ebb271868c">
+      <ID>Classe libellé</ID>
+      <Name>Classe libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a8fd4793-67ee-43ac-bd5b-017736c94fcb">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8ecdb2f9-39de-48a8-849a-24f2ca6ff8d7">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>ClasseLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9ea0cf9e-7064-4070-b92d-59a17defc729">
+      <ID>Classe code libellé</ID>
+      <Name>Classe code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="61971adc-1c75-483a-91f1-2c02234b9917">
+          <DataType>WChar</DataType>
+          <DataSize>205</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="539da3d0-2804-47f6-87c5-c4a5ccbf935c">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>ClasseCodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d014bfab-3da6-459a-bc85-2bcc11e439b3">
+      <ID>Groupe code</ID>
+      <Name>Groupe code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0307b6b2-7b94-48e7-926d-e048f1329f01">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="de939595-8189-455f-b6f6-896e35a76ec6">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>GroupeCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="250328a5-ea3d-43bc-a3c1-4c85849f6f8b">
+      <ID>Groupe libellé</ID>
+      <Name>Groupe libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="31587768-16c0-4f43-af20-80bb8a8f2768">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e59f06fe-197e-4ba4-b05f-ae6629702298">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>GroupeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e99ca7f2-06c8-49b8-b78b-8aaf25211a4f">
+      <ID>Groupe code libellé</ID>
+      <Name>Groupe code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="41e6f12f-4094-4263-acc7-0181c3aa98bd">
+          <DataType>WChar</DataType>
+          <DataSize>204</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bb9e2522-9479-4dc6-aecf-7b4cbccff6bc">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>GroupeCodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="03ea499b-e0e9-4708-9463-eb129cbeaaa2">
+      <ID>Division code</ID>
+      <Name>Division code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0364cab8-fbcf-44d3-a2fb-3c9011696062">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1aa0d00c-9d40-40e0-8fa1-92ffd2c016dc">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>DivisionCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="094e7cee-874c-4f8d-a03d-1728698ec881">
+      <ID>Division libellé</ID>
+      <Name>Division libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d692765-9e38-4fc8-aa6d-ad478b07c68d">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6c12bb2-1619-432d-b268-54d6e59c5699">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>DivisionLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="dbd777f5-fdba-4139-b268-d58a7afa0c68">
+      <ID>Division code libellé</ID>
+      <Name>Division code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b0eb0c50-db53-44c7-9abc-681b4c7496a6">
+          <DataType>WChar</DataType>
+          <DataSize>202</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a610220-11f0-4081-b6d8-5c2a99a6e011">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>DivisionCodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0c54fdb8-707e-45a8-9bfa-e2122e0c50ab">
+      <ID>Section code</ID>
+      <Name>Section code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="08e6b13d-a4c3-4780-95a4-b49a8aa3dd4c">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bc5e0964-3344-4900-b0dd-8fd6b17b1d8e">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>SectionCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="a3852ac6-ae42-4651-887f-6b1feeb35b56">
+      <ID>Section libellé</ID>
+      <Name>Section libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dc319f79-0e1b-4e0c-8114-df348b231666">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="09fb9422-c0ad-4b7c-9852-3948ddfbc7b5">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>SectionLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2901afed-f6b1-49aa-b231-2f72f5056262">
+      <ID>Section code libellé</ID>
+      <Name>Section code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="174dbef8-671e-41f6-ba04-8e95da2e2a8b">
+          <DataType>WChar</DataType>
+          <DataSize>201</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63d20c39-0d1c-49a1-b7cb-607aad0f5f90">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>SectionCodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="12534c77-f7e9-4bbe-8dd5-55f7e7d0472b">
+      <ID>NA10 code</ID>
+      <Name>NA10 code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b5c967bb-8162-47c4-90a3-e82024923976">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7f35eb7c-7a19-44ef-b6b0-1100b10c265b">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA10Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="70f291bf-73b5-4859-ad85-b89ec1581e64">
+      <ID>NA10 libellé</ID>
+      <Name>NA10 libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4d1b4497-b6ee-4503-a003-8b438f519c41">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0a2840e0-abca-46af-8cf3-ea0e4f201b9c">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA10Libelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="89e8894e-d2cd-4c0e-91eb-2a58668676c6">
+      <ID>NA10 code libellé</ID>
+      <Name>NA10 code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="48103b50-8c60-4512-9530-7b7224fe3b63">
+          <DataType>WChar</DataType>
+          <DataSize>202</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="babe10be-a300-4e09-a0d7-a79f7fd52fe7">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA10CodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3e75fdc0-f137-41e2-8f57-496d454f4533">
+      <ID>NA17 code</ID>
+      <Name>NA17 code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="dbe18f2a-038a-41ef-9697-9dcab8c3af26">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d07b044e-81d3-4491-b0a8-e793193cb2b2">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA17Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9242a0d7-1757-46db-8d53-7b2353fcdfff">
+      <ID>NA17 libelleé</ID>
+      <Name>NA17 libelleé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="067a929a-5e0e-47d1-a52d-f45fb83a3b3a">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="bb90234f-7af9-4f91-8dc6-8fecafb4ba46">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA17Libelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3f3c964c-c648-44d3-a03f-e41261ed7f0a">
+      <ID>NA17 code libellé</ID>
+      <Name>NA17 code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8f76ff77-38a8-4afa-86e7-7da920744760">
+          <DataType>WChar</DataType>
+          <DataSize>202</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0fb052df-0aa9-4c87-99b6-d02ecb02df6d">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA17CodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="29b3151f-ee3d-4e92-94d6-858093da486e">
+      <ID>NA21 code</ID>
+      <Name>NA21 code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="44780c0c-e9df-4651-8a3c-f3d43e95e3e2">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="7fd0b79a-9366-4548-b743-71c8163ebdf3">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA21Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7e3ff3ae-db8b-43bd-bee0-29a3a1087818">
+      <ID>NA21 libellé</ID>
+      <Name>NA21 libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="05f492db-e41c-45a9-a91b-ec6b3abb25fa">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="68ce9ca7-02c5-476d-8f05-8729452e23d0">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA21Libelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="834d5631-7bc1-4097-9274-bbe05eaca2ff">
+      <ID>NA21 code libellé</ID>
+      <Name>NA21 code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2ecaac4f-59fe-4c17-9b82-29620a415c32">
+          <DataType>WChar</DataType>
+          <DataSize>202</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6c65ed95-b457-4a36-9645-942fd7593066">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA21CodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7b265f36-a269-410d-b84a-b4b7e72ee17c">
+      <ID>NA38 code</ID>
+      <Name>NA38 code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="cd0f891b-cff2-43d5-9eaa-c2983273322b">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8dcf7bdd-72b4-4746-abf5-066d88177530">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA38Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d4d15e3d-1e29-4cb0-8317-183e69e15181">
+      <ID>NA38 libellé</ID>
+      <Name>NA38 libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0fadea92-a6d1-4e38-898c-23648df4ff97">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9d90d6ab-90f7-46dc-867c-2989ddedf6df">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA38Libelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="6513fcf0-c432-4918-9d35-9436c35ea87c">
+      <ID>NA38 code libellé</ID>
+      <Name>NA38 code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e6aac22-7c67-4811-aa23-d451dbdc2c2c">
+          <DataType>WChar</DataType>
+          <DataSize>202</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a18c27c5-bc8f-472c-bc0d-26d04fe7ca55">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA38CodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b548a253-1068-40dd-bd4f-9136deda5b0a">
+      <ID>NA88 code</ID>
+      <Name>NA88 code</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="b63790ca-426e-4b31-8095-3b784f6ddce6">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0caeb070-39e0-41f9-a3b8-70ebff900ae2">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA88Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1d264b05-8c8c-4823-b0c7-01e2bc021fc7">
+      <ID>NA88 libellé</ID>
+      <Name>NA88 libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="552b1105-768b-463d-b8e8-8e7ed0d6a602">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fc8574d7-81c8-41bc-bc30-7115743e8896">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA88Libelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="68322ba8-aeea-499a-b7b6-5679ccd5e745">
+      <ID>NA88 code libellé</ID>
+      <Name>NA88 code libellé</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="62efb0f3-5b1a-4832-84ee-4000418e3392">
+          <DataType>WChar</DataType>
+          <DataSize>202</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="08777b9f-f425-4e4e-9ed5-9c3a17598bab">
+            <TableID>dbo_DimNAF</TableID>
+            <ColumnID>NA88CodeLibelle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

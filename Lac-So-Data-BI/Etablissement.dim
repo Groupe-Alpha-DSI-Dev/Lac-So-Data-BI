@@ -1,0 +1,381 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="75504282-22ac-4eb5-b71a-94402230e6a0" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Etablissement</ID>
+  <Name>Etablissement</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="1097" scrolltop="-1194" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="75" x="7408" y="11536" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimEtablissement" left="2818" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5842" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000d216000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimEtablissement" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>1097</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-1194</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>2818</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>75</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="277">
+            <Shape Id="Etablissement Key" Expanded="true">
+              <Attributes>
+                <Attribute Id="Etablissement Key" />
+                <Attribute Id="Adresse1" />
+                <Attribute Id="Adresse2" />
+                <Attribute Id="Adresse3" />
+                <Attribute Id="Annee Ref Effectif" />
+                <Attribute Id="Arrondissement Key" />
+                <Attribute Id="Code Postal" />
+                <Attribute Id="Entreprise Key" />
+                <Attribute Id="Etat Administratif" />
+                <Attribute Id="Is Employeur" />
+                <Attribute Id="Is Siege" />
+                <Attribute Id="NAF Key" />
+                <Attribute Id="NIC" />
+                <Attribute Id="Pays" />
+                <Attribute Id="SIRET" />
+                <Attribute Id="Tranche Effectif Etablissement Code" />
+                <Attribute Id="Tranche Effectif Etablissement Libelle" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="dc86a1cc-a1a4-4812-ad3d-b833291db73e">
+    <DataSourceViewID>LAC DWH SO-DATA</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="f530a463-08d3-4a88-b7dd-d23d5585a2c8">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="b3540c4e-2172-4fc6-b5c1-3427fbc07576">
+      <ID>Etablissement Key</ID>
+      <Name>Etablissement</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c04d6549-992a-45bf-b3f9-fa42a13d2c81">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8589c031-e260-4260-87de-1e2206e554e9">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>EtablissementKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="cec89b52-661c-41e3-a694-ca593da6a4d2">
+        <DataType>WChar</DataType>
+        <DataSize>14</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="13e7bc88-eb8b-4492-b39e-059060f86f50">
+          <TableID>dbo_DimEtablissement</TableID>
+          <ColumnID>SIRET</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="923b0973-68ff-4988-8264-529de52e2749">
+          <AttributeID>Arrondissement Key</AttributeID>
+          <Name>Arrondissement Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="d45c9fc7-a133-4b52-a221-430a225c4db8">
+          <AttributeID>NIC</AttributeID>
+          <Name>NIC</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="50f3dd45-c031-4f8e-a47e-055cd918639b">
+          <AttributeID>SIRET</AttributeID>
+          <Name>SIRET</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e04178fc-c3c1-4c5b-8aee-8e13d4766c89">
+          <AttributeID>Is Siege</AttributeID>
+          <Name>Is Siege</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="321a1c76-c58e-453e-9c7f-4609381ca52a">
+          <AttributeID>Etat Administratif</AttributeID>
+          <Name>Etat Administratif</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="0241d127-3dae-4989-8069-77a67592a130">
+          <AttributeID>Is Employeur</AttributeID>
+          <Name>Is Employeur</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="491f0ec4-c5b3-43f1-97d6-615104464f23">
+          <AttributeID>Tranche Effectif Etablissement Code</AttributeID>
+          <Name>Tranche Effectif Etablissement Code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="137f1c5c-4554-4ea3-8365-c2c659e9a5da">
+          <AttributeID>Code Postal</AttributeID>
+          <Name>Code Postal</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c5bb4117-21e8-46cf-bb22-7eb95f945635">
+          <AttributeID>Pays</AttributeID>
+          <Name>Pays</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="01bd43a9-5f2c-4159-8fd0-ce831aa15104">
+          <AttributeID>NAF Key</AttributeID>
+          <Name>NAF Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="efd0fe89-7967-4e9e-83b6-b44753f0c8f5">
+          <AttributeID>Entreprise Key</AttributeID>
+          <Name>Entreprise Key</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9b0ac7d5-449a-44d3-9c49-60878ac7826e">
+      <ID>Arrondissement Key</ID>
+      <Name>ArrondissementKey</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="04b62776-eb2f-4895-ad87-a2dc5c695114">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0deb44cb-6760-4601-a23c-b328a1a67731">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>ArrondissementKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1a762942-da0f-49de-8808-bbd325973357">
+      <ID>NIC</ID>
+      <Name>NIC</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1c97e488-9e84-40f4-98e9-2e32f973cd9a">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2790cb80-2d47-4f16-b934-8678ee4f92bd">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>NIC</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="74170248-e145-43af-acbd-322de0b75ba6">
+      <ID>SIRET</ID>
+      <Name>SIRET</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="f7c6b04d-e0d1-4caa-a048-2e6fb0b882e9">
+          <DataType>WChar</DataType>
+          <DataSize>14</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c542b7ef-2903-4a70-8e82-d0ebf400807c">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>SIRET</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="7cf40af1-7405-4255-ae69-c6ae6044a0fc">
+      <ID>Is Siege</ID>
+      <Name>Etablissement siège</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="57a6e62b-6a10-43fb-bd54-5ae938fe336a">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="269bbffe-05f5-4588-8520-5a85782e5d5d">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>IsSiege</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="fe46f2f4-24d4-4694-9690-3e84db9ff47f">
+      <ID>Etat Administratif</ID>
+      <Name>Etat Administratif</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6d805b61-cd94-47a3-9206-4508e60d07a7">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="0dd0505c-edb4-4c2c-8588-4ff491a22ce1">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>EtatAdministratif</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="cedca030-8a86-45c8-880c-3973a4a8b6d1">
+      <ID>Is Employeur</ID>
+      <Name>Etablissement employeur</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4fefb383-4449-48ee-9e22-a4c18f778ff5">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3efec3dd-3da5-46cc-a07c-3a92cc457caa">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>IsEmployeur</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="af441070-f1b8-4ab2-87f5-67705eb9c095">
+      <ID>Tranche Effectif Etablissement Code</ID>
+      <Name>Tranche effectif etablissement</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="de215d05-9293-48be-bc48-06bb06a11224">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="d309b94d-9a70-4ded-a505-c593e466a2cb">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>TrancheEffectifEtablissementCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="21072377-4639-4259-b769-1d1e64f2f394">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="279a10c5-f4fe-49aa-a6b5-4ffaedf7f0f5">
+          <TableID>dbo_DimEtablissement</TableID>
+          <ColumnID>TrancheEffectifEtablissementLibelle</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="0f7d08d6-029b-4018-8313-42d0599e6f9e">
+      <ID>Code Postal</ID>
+      <Name>Code postal</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="83afa6f9-bbc1-4e9a-b75d-e8463ceb9158">
+          <DataType>WChar</DataType>
+          <DataSize>5</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e06ed385-1dea-4c22-b106-1e720c320be4">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>CodePostal</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="51224366-e47b-47d1-b0c5-60ed878e25c2">
+      <ID>Pays</ID>
+      <Name>Pays</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6cfe7fb8-ded0-44eb-9575-8e0d54e5ffc5">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="94f96613-8c2e-4375-bcd0-51c7c9e3a272">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>Pays</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="3a9b2a8a-1829-4686-93bf-35f1bf5ce3de">
+      <ID>NAF Key</ID>
+      <Name>NAFKey</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a4f61da6-4d8d-4e90-8acf-f8ca879d4732">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="df2effc7-ae2d-47b2-959e-50f74be39308">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>NAFKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2b972839-5163-4d33-8e18-d8b16f30c933">
+      <ID>Entreprise Key</ID>
+      <Name>EntrepriseKey</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="214ae87a-8fcc-4446-80f0-15302d0bce11">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fff06eb3-cf7f-4c19-b973-f1c59d8ca235">
+            <TableID>dbo_DimEtablissement</TableID>
+            <ColumnID>EntrepriseKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

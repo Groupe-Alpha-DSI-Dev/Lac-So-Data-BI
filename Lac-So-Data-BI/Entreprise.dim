@@ -1,0 +1,404 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="d7dc5e6b-61a5-40cb-ba8b-b65314134961" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Entreprise</ID>
+  <Name>Entreprise</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="5" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1215" scrolltop="-31" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="89" x="7408" y="11536" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimEntreprise" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="5355" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000eb14000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimEntreprise" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimCategorieJuridique" left="95" top="6278" logicalid="3" controlid="2" masterid="0" hint1="0" hint2="0" width="3948" height="3163" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e00006c0f00005b0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimCategorieJuridique" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline" left="197" top="4700" logicalid="4" controlid="3" masterid="0" hint1="0" hint2="0" width="1722" height="2078" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="0" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK_dbo_DimCategorieJuridique_dbo_DimEntreprise]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="4" destattachpoint="1" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="1519" y="6278" />
+              <point x="1519" y="5520" />
+              <point x="497" y="5520" />
+              <point x="497" y="5000" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-1215</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-31</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>89</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="c63e5592-e676-4c2f-b631-8067c2ee4e20">
+    <DataSourceViewID>LAC DWH SO-DATA</DataSourceViewID>
+  </Source>
+  <UnknownMember>Visible</UnknownMember>
+  <ErrorConfiguration dwd:design-time-name="4a470837-b86b-4c33-a52f-c61ea9b75cbb">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="1d0cdc1e-87ca-48dd-bcec-678f303d70b5">
+      <ID>Entreprise Key</ID>
+      <Name>Entreprise</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7d74b640-6540-4694-afbb-351432f5a2ee">
+          <DataType>Integer</DataType>
+          <NullProcessing>UnknownMember</NullProcessing>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5a63393b-957d-473c-b9c4-5c083f8dc0f5">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>EntrepriseKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="bb86c01b-227a-48e3-a309-3f7ee1ff33bc">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="b90c9956-2a03-403b-ab6e-1b54ea17ecbb">
+          <TableID>dbo_DimEntreprise</TableID>
+          <ColumnID>RaisonSociale</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="c0e1f411-1212-41fe-97bd-910a4b92f6cd">
+          <AttributeID>NIC Siege</AttributeID>
+          <Name>NIC Siege</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e3d3b2fe-dfbd-4225-b9eb-0647aa973843">
+          <AttributeID>SIREN</AttributeID>
+          <Name>SIREN</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="10f2ff81-27b4-4bd1-8168-90654c1d0238">
+          <AttributeID>Sigle</AttributeID>
+          <Name>Sigle</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e56ca1ed-fd56-4996-8130-9f6c5b614156">
+          <AttributeID>Tranche Effectif Entreprise Code</AttributeID>
+          <Name>Tranche Effectif Entreprise Code</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="135d668a-a08b-4adb-80f3-88cefcf097ee">
+          <AttributeID>Etat Administratif</AttributeID>
+          <Name>Etat Administratif</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="51d6913c-3c65-4a97-8352-f3e71120cd62">
+          <AttributeID>Is Employeur</AttributeID>
+          <Name>Is Employeur</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="a8e39b66-333c-4c6f-b3f1-7a2bbb3aef85">
+          <AttributeID>Categorie</AttributeID>
+          <Name>Categorie</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="c1fd7d0e-1a49-47b0-b8eb-ecc2135d9e22">
+          <AttributeID>NAF Key</AttributeID>
+          <Name>NAF Key</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="8cd515c1-87fd-4bde-9a4c-403321e8c5bf">
+          <AttributeID>Niv1 Code</AttributeID>
+          <Name>Catégorie juridique niveau 1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b18f71a1-91ce-41cd-98fb-291af36a694c">
+          <AttributeID>Niv2 Code</AttributeID>
+          <Name>Catégorie juridique niveau 2</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="ff805a2a-df9b-4306-9759-4cd0513fa126">
+          <AttributeID>Niv3 Code</AttributeID>
+          <Name>Catégorie juridique niveau 3</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="bf75b42d-8463-4ec7-be1b-640304869293">
+      <ID>NIC Siege</ID>
+      <Name>NIC Siege</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8c8aeb4d-152b-4fcf-a96e-292f119c0ea1">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="98088bb2-2685-4c3b-a246-9bb2f4253d24">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>NICSiege</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2ccff8f1-0994-47de-b250-6761e3ea45a5">
+      <ID>SIREN</ID>
+      <Name>SIREN</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="894d59e9-babb-44eb-b5f1-bedaba0d6c6b">
+          <DataType>WChar</DataType>
+          <DataSize>10</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="e980dcd2-d468-46d9-a8bc-483f3daf0a8f">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>SIREN</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="412415eb-6c05-45c1-8a7f-072f2b56e51e">
+      <ID>Sigle</ID>
+      <Name>Sigle</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="09038129-9a73-407e-b6ef-92faeb973e29">
+          <DataType>WChar</DataType>
+          <DataSize>100</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="88411d9c-4228-40d8-90fb-aeb0bee4bec7">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>Sigle</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="d4f914ae-6e4c-40b0-81a2-2b87d9409dd1">
+      <ID>Tranche Effectif Entreprise Code</ID>
+      <Name>Tranche effectif entreprise</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="89fd1fa6-2bb4-4f8c-aee9-6d1d2f88b7b0">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="08bda54e-f3e5-4903-b739-9fc68dbe2dba">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>TrancheEffectifEntrepriseCode</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="a4cbbfae-9411-4173-9a67-4d072f6a1277">
+        <DataType>WChar</DataType>
+        <DataSize>255</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="4b8e385a-df7d-4081-b395-f6f4edbca5bf">
+          <TableID>dbo_DimEntreprise</TableID>
+          <ColumnID>TrancheEffectifEntrepriseLibelle</ColumnID>
+        </Source>
+      </NameColumn>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b9670d1d-9b19-4bd6-8be3-f8d8bc5fe5ef">
+      <ID>Etat Administratif</ID>
+      <Name>Etat administratif</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4af178f4-9dc5-4550-8e1c-12091c273d01">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c9823c59-1cb9-4b89-8250-6e6018d5989c">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>EtatAdministratif</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c2b6823e-7d19-4fb0-87cb-e159f42a1a1b">
+      <ID>Is Employeur</ID>
+      <Name>Entreprise employeur</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="56f3eb7e-ac47-4b30-952a-b6625f0bf839">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="fe869a5e-eee3-4d38-a5bf-33678019aa66">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>IsEmployeur</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="314b3857-c061-49ac-9cd7-8f50419dc197">
+      <ID>Categorie</ID>
+      <Name>Categorie</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9e2fac06-1465-43d8-8d2c-04cc395eed28">
+          <DataType>WChar</DataType>
+          <DataSize>3</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="63fc2e33-d3af-4bf3-b91e-6ad03db328e6">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>Categorie</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="1b1101d2-b30d-43ed-92b1-a5170bfc7c3e">
+      <ID>NAF Key</ID>
+      <Name>NAFKey</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4fb6a2f6-5c67-4079-bdee-9b9f8cc32c8c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b64b25f3-8fc3-414d-9742-5691273b4904">
+            <TableID>dbo_DimEntreprise</TableID>
+            <ColumnID>NAFKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f74330dc-ca3d-4c77-beac-9a6c0689bbf5">
+      <ID>Niv1 Code</ID>
+      <Name>Catégorie juridique niveau 1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a089663a-669b-4d16-95f9-21006fd17136">
+          <DataType>WChar</DataType>
+          <DataSize>1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1d85988a-ef52-4c3e-a973-76fa58b711e8">
+            <TableID>dbo_DimCategorieJuridique</TableID>
+            <ColumnID>Niv1Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="8576a446-322b-4356-88f0-fd0fc6bba84f">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="f89b53b2-48a8-4e06-9734-605a02fe0e80">
+          <TableID>dbo_DimCategorieJuridique</TableID>
+          <ColumnID>Niv1Libelle</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="40f01407-f8af-4269-b858-698f97b78f10">
+      <ID>Niv2 Code</ID>
+      <Name>Catégorie juridique niveau 2</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9a8e9001-c90d-4c4a-b704-1121c9603d1e">
+          <DataType>WChar</DataType>
+          <DataSize>2</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4c0894d6-5a44-4533-b518-f6b1eb2b3545">
+            <TableID>dbo_DimCategorieJuridique</TableID>
+            <ColumnID>Niv2Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="5c75e133-377d-4e54-9684-b3ae5f341c37">
+        <DataType>WChar</DataType>
+        <DataSize>100</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="fb5a80a4-7dd7-480e-995e-c0f58293ab13">
+          <TableID>dbo_DimCategorieJuridique</TableID>
+          <ColumnID>Niv2Libelle</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="b798bb3b-f637-47e1-acbd-19e66675434b">
+      <ID>Niv3 Code</ID>
+      <Name>Catégorie juridique niveau 3</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="70a2d21b-20d2-4e6b-949a-cdbe02ac1a5a">
+          <DataType>WChar</DataType>
+          <DataSize>4</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="1762ac85-c167-4c54-b38a-91e11fe5174e">
+            <TableID>dbo_DimCategorieJuridique</TableID>
+            <ColumnID>Niv3Code</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn dwd:design-time-name="ecc8c681-a42d-4c17-a14c-51bf8e1d9062">
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="7ceec6e1-2211-426e-bb9d-1a90ac1ca6cc">
+          <TableID>dbo_DimCategorieJuridique</TableID>
+          <ColumnID>Niv3Libelle</ColumnID>
+        </Source>
+      </NameColumn>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>

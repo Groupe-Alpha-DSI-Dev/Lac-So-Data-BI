@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Lac-So-Data-SSAS", "Lac-So-Data-BI\Lac-So-Data-SSAS.dwproj", "{F19EC17F-4FDA-429E-8894-FDFFECFC8A1E}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Lac-So-Data-SSIS", "Lac-So-Data-SSIS\Lac-So-Data-SSIS.dtproj", "{B418F97C-1669-4BBA-98F5-0E5645E37315}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F19EC17F-4FDA-429E-8894-FDFFECFC8A1E}.Development|Default.ActiveCfg = Development
+		{F19EC17F-4FDA-429E-8894-FDFFECFC8A1E}.Development|Default.Build.0 = Development
+		{F19EC17F-4FDA-429E-8894-FDFFECFC8A1E}.Development|Default.Deploy.0 = Development
+		{B418F97C-1669-4BBA-98F5-0E5645E37315}.Development|Default.ActiveCfg = Development
+		{B418F97C-1669-4BBA-98F5-0E5645E37315}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08A5178D-C0B9-4E9D-ACE4-5120D1554286}
+	EndGlobalSection
+EndGlobal

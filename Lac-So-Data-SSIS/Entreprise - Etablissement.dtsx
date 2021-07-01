@@ -1,0 +1,2777 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/18/2021 10:12:07 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="P0696"
+  DTS:CreatorName="ALPHA\DIAWA"
+  DTS:DTSID="{F0567256-FE98-48F1-ACF2-9B483B685B99}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="Entreprise - Etablissement"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{08600CEF-01D9-41C4-B7BF-D60824FCF1B3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A7759959-2668-4ACE-B249-72A36A87CB4D}"
+      DTS:ObjectName="LAC_DWH_ENTREPRISES">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_DWH_ENTREPRISES;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAC_STG_SIRENE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BE70B905-95C9-474B-9B32-B06057846D59}"
+      DTS:ObjectName="LAC_STG_SIRENE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_STG_SIRENE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copy DimArrondissement"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
+      DTS:DTSID="{D3C3C373-A038-48D6-BCAE-EB2E9A67C545}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy DimArrondissement"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copy DimArrondissement\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimArrondissement]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy DimArrondissement\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAC_DWH_SO-DATA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[ArrondissementKey]"
+                      cachedDataType="i4"
+                      cachedName="ArrondissementKey"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ArrondissementKey]"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ArrondissementKey]" />
+                    <inputColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[CommuneKey]"
+                      cachedDataType="i4"
+                      cachedName="CommuneKey"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CommuneKey]"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommuneKey]" />
+                    <inputColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Code"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Code]"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Code]" />
+                    <inputColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Libelle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Libelle"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Libelle]"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Libelle]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[ArrondissementKey]"
+                      dataType="i4"
+                      name="ArrondissementKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[CommuneKey]"
+                      dataType="i4"
+                      name="CommuneKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Libelle" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy DimArrondissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimArrondissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimArrondissement\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy DimArrondissement\Source OLE DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="Source OLE DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimArrondissement]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy DimArrondissement\Source OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ArrondissementKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ArrondissementKey]"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[ArrondissementKey]"
+                      name="ArrondissementKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommuneKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommuneKey]"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[CommuneKey]"
+                      name="CommuneKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Code]"
+                      length="10"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Libelle]"
+                      length="200"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[Libelle]"
+                      name="Libelle"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[ArrondissementKey]"
+                      dataType="i4"
+                      name="ArrondissementKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[CommuneKey]"
+                      dataType="i4"
+                      name="CommuneKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB].ExternalColumns[Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Libelle" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ArrondissementKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ArrondissementKey]"
+                      name="ArrondissementKey" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommuneKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[CommuneKey]"
+                      name="CommuneKey" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Code]"
+                      name="Code" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[Libelle]"
+                      name="Libelle" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copy DimArrondissement.Paths[Sortie de source OLE DB]"
+              endId="Package\Copy DimArrondissement\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source OLE DB"
+              startId="Package\Copy DimArrondissement\Source OLE DB.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Copy DimCategorieJuridique"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{D724F041-57E7-4CA9-BECF-477328A0758E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy DimCategorieJuridique"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="datCatégorieJuridique"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[datCategorieJuridique]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAC_STG_SIRENE]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAC_STG_SIRENE]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[IdCategorieJuridique]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[IdCategorieJuridique]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[IdCategorieJuridique]"
+                      name="IdCategorieJuridique"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv3Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv3Code]"
+                      length="4"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv3Code]"
+                      name="Niv3Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv3Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv3Libelle]"
+                      length="200"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv3Libelle]"
+                      name="Niv3Libelle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv2Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv2Code]"
+                      length="2"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv2Code]"
+                      name="Niv2Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv2Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv2Libelle]"
+                      length="100"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv2Libelle]"
+                      name="Niv2Libelle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv1Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv1Code]"
+                      length="1"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv1Code]"
+                      name="Niv1Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv1Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv1Libelle]"
+                      length="100"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv1Libelle]"
+                      name="Niv1Libelle"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[IdCategorieJuridique]"
+                      dataType="i4"
+                      name="IdCategorieJuridique" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv3Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Niv3Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv3Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Niv3Libelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv2Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Niv2Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv2Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Niv2Libelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv1Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Niv1Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].ExternalColumns[Niv1Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Niv1Libelle" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[IdCategorieJuridique]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[IdCategorieJuridique]"
+                      name="IdCategorieJuridique" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv3Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv3Code]"
+                      name="Niv3Code" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv3Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv3Libelle]"
+                      name="Niv3Libelle" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv2Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv2Code]"
+                      name="Niv2Code" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv2Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv2Libelle]"
+                      name="Niv2Libelle" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv1Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv1Code]"
+                      name="Niv1Code" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv1Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[Niv1Libelle]"
+                      name="Niv1Libelle" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="DimCategorieJuridique"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimCategorieJuridique]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Connections[OleDbConnection]"
+                  connectionManagerID="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAC_DWH_SO-DATA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[Niv3Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Niv3Code"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv3Code]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv3Code]" />
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[Niv3Libelle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Niv3Libelle"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv3Libelle]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv3Libelle]" />
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[Niv2Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="Niv2Code"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv2Code]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv2Code]" />
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[Niv2Libelle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Niv2Libelle"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv2Libelle]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv2Libelle]" />
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[Niv1Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Niv1Code"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv1Code]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv1Code]" />
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[Niv1Libelle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Niv1Libelle"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv1Libelle]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[Niv1Libelle]" />
+                    <inputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].Columns[IdCategorieJuridique]"
+                      cachedDataType="i4"
+                      cachedName="IdCategorieJuridique"
+                      externalMetadataColumnId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[CategorieJuridiqueKey]"
+                      lineageId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB].Columns[IdCategorieJuridique]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[CategorieJuridiqueKey]"
+                      dataType="i4"
+                      name="CategorieJuridiqueKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv3Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="Niv3Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv3Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Niv3Libelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv2Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="Niv2Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv2Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Niv2Libelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv1Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Niv1Code" />
+                    <externalMetadataColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB].ExternalColumns[Niv1Libelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Niv1Libelle" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copy DimCategorieJuridique.Paths[Sortie de source OLE DB]"
+              endId="Package\Copy DimCategorieJuridique\DimCategorieJuridique.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source OLE DB"
+              startId="Package\Copy DimCategorieJuridique\datCatégorieJuridique.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Copy tmpEntreprise"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{F7785872-1537-4D0A-A3B1-A5A6C35D03C2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy tmpEntreprise"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copy tmpEntreprise\DimEntreprise"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="DimEntreprise"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimEntreprise]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy tmpEntreprise\DimEntreprise.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[EntrepriseKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[EntrepriseKey]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[EntrepriseKey]"
+                      name="EntrepriseKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[NAFKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[NAFKey]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[NAFKey]"
+                      name="NAFKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[CategorieJuridiqueKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[CategorieJuridiqueKey]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[CategorieJuridiqueKey]"
+                      name="CategorieJuridiqueKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[NICSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[NICSiege]"
+                      length="10"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[NICSiege]"
+                      name="NICSiege"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[SIREN]"
+                      length="10"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[SIREN]"
+                      name="SIREN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[RaisonSociale]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[RaisonSociale]"
+                      length="200"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[RaisonSociale]"
+                      name="RaisonSociale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[Sigle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[Sigle]"
+                      length="100"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[Sigle]"
+                      name="Sigle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEntrepriseCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEntrepriseCode]"
+                      length="2"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEntrepriseCode]"
+                      name="TrancheEffectifEntrepriseCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEntrepriseLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEntrepriseLibelle]"
+                      length="255"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEntrepriseLibelle]"
+                      name="TrancheEffectifEntrepriseLibelle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[EtatAdministratif]"
+                      length="1"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[EtatAdministratif]"
+                      name="EtatAdministratif"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[IsEmployeur]"
+                      length="3"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[IsEmployeur]"
+                      name="IsEmployeur"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[Categorie]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[Categorie]"
+                      length="3"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[Categorie]"
+                      name="Categorie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[AnneeCategorie]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[AnneeCategorie]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[AnneeCategorie]"
+                      name="AnneeCategorie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[AnneeRefEffectif]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[AnneeRefEffectif]"
+                      name="AnneeRefEffectif"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[EntrepriseKey]"
+                      dataType="i4"
+                      name="EntrepriseKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[NAFKey]"
+                      dataType="i4"
+                      name="NAFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[CategorieJuridiqueKey]"
+                      dataType="i4"
+                      name="CategorieJuridiqueKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[NICSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="NICSiege" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SIREN" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[RaisonSociale]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="RaisonSociale" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[Sigle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Sigle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEntrepriseCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="TrancheEffectifEntrepriseCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEntrepriseLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TrancheEffectifEntrepriseLibelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="EtatAdministratif" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IsEmployeur" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[Categorie]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Categorie" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[AnneeCategorie]"
+                      dataType="i4"
+                      name="AnneeCategorie" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      dataType="i4"
+                      name="AnneeRefEffectif" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[EntrepriseKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[EntrepriseKey]"
+                      name="EntrepriseKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[NAFKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[NAFKey]"
+                      name="NAFKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[CategorieJuridiqueKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[CategorieJuridiqueKey]"
+                      name="CategorieJuridiqueKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[NICSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[NICSiege]"
+                      name="NICSiege" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[SIREN]"
+                      name="SIREN" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[RaisonSociale]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[RaisonSociale]"
+                      name="RaisonSociale" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[Sigle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[Sigle]"
+                      name="Sigle" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEntrepriseCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEntrepriseCode]"
+                      name="TrancheEffectifEntrepriseCode" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEntrepriseLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEntrepriseLibelle]"
+                      name="TrancheEffectifEntrepriseLibelle" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[EtatAdministratif]"
+                      name="EtatAdministratif" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[IsEmployeur]"
+                      name="IsEmployeur" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[Categorie]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[Categorie]"
+                      name="Categorie" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[AnneeCategorie]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[AnneeCategorie]"
+                      name="AnneeCategorie" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[AnneeRefEffectif]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[AnneeRefEffectif]"
+                      name="AnneeRefEffectif" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy tmpEntreprise\tmpEntreprise"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="tmpEntreprise"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[tmpEntreprise]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy tmpEntreprise\tmpEntreprise.Connections[OleDbConnection]"
+                  connectionManagerID="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAC_DWH_SO-DATA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[EntrepriseKey]"
+                      cachedDataType="i4"
+                      cachedName="EntrepriseKey"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[EntrepriseKey]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[EntrepriseKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[NAFKey]"
+                      cachedDataType="i4"
+                      cachedName="NAFKey"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[NAFKey]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[NAFKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[CategorieJuridiqueKey]"
+                      cachedDataType="i4"
+                      cachedName="CategorieJuridiqueKey"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[CategorieJuridiqueKey]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[CategorieJuridiqueKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[NICSiege]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="NICSiege"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[NICSiege]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[NICSiege]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[SIREN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="SIREN"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[SIREN]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[SIREN]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[RaisonSociale]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="RaisonSociale"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[RaisonSociale]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[RaisonSociale]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[Sigle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Sigle"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[Sigle]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[Sigle]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[TrancheEffectifEntrepriseCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="TrancheEffectifEntrepriseCode"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEntrepriseCode]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEntrepriseCode]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[TrancheEffectifEntrepriseLibelle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TrancheEffectifEntrepriseLibelle"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEntrepriseLibelle]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEntrepriseLibelle]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[EtatAdministratif]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="EtatAdministratif"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[EtatAdministratif]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[EtatAdministratif]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[IsEmployeur]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="IsEmployeur"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[IsEmployeur]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[IsEmployeur]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[Categorie]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="Categorie"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[Categorie]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[Categorie]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[AnneeCategorie]"
+                      cachedDataType="i4"
+                      cachedName="AnneeCategorie"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[AnneeCategorie]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[AnneeCategorie]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].Columns[AnneeRefEffectif]"
+                      cachedDataType="i4"
+                      cachedName="AnneeRefEffectif"
+                      externalMetadataColumnId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      lineageId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB].Columns[AnneeRefEffectif]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[EntrepriseKey]"
+                      dataType="i4"
+                      name="EntrepriseKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[NAFKey]"
+                      dataType="i4"
+                      name="NAFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[CategorieJuridiqueKey]"
+                      dataType="i4"
+                      name="CategorieJuridiqueKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[NICSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="NICSiege" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="SIREN" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[RaisonSociale]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="RaisonSociale" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[Sigle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Sigle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEntrepriseCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="TrancheEffectifEntrepriseCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEntrepriseLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TrancheEffectifEntrepriseLibelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="EtatAdministratif" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IsEmployeur" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[Categorie]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="Categorie" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[AnneeCategorie]"
+                      dataType="i4"
+                      name="AnneeCategorie" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      dataType="i4"
+                      name="AnneeRefEffectif" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy tmpEntreprise\tmpEntreprise.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\tmpEntreprise.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy tmpEntreprise\tmpEntreprise.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEntreprise\tmpEntreprise.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copy tmpEntreprise.Paths[Sortie de source OLE DB]"
+              endId="Package\Copy tmpEntreprise\tmpEntreprise.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source OLE DB"
+              startId="Package\Copy tmpEntreprise\DimEntreprise.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Copy tmpEtablissement"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{C6147707-E57F-4F04-B994-C73E2C8A41CB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy tmpEtablissement"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copy tmpEtablissement\DimEtablissement"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="DimEtablissement"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[DimEtablissement]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy tmpEtablissement\DimEtablissement.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAC_DWH_ENTREPRISES]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EtablissementKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[EtablissementKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EtablissementKey]"
+                      name="EtablissementKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EntrepriseKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[EntrepriseKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EntrepriseKey]"
+                      name="EntrepriseKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[NAFKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[NAFKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[NAFKey]"
+                      name="NAFKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[ArrondissementKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[ArrondissementKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[ArrondissementKey]"
+                      name="ArrondissementKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[NIC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[NIC]"
+                      length="5"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[NIC]"
+                      name="NIC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[SIRET]"
+                      length="14"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[SIRET]"
+                      name="SIRET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[IsSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[IsSiege]"
+                      length="3"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[IsSiege]"
+                      name="IsSiege"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[EtatAdministratif]"
+                      length="1"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EtatAdministratif]"
+                      name="EtatAdministratif"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[IsEmployeur]"
+                      length="3"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[IsEmployeur]"
+                      name="IsEmployeur"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEtablissementCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEtablissementCode]"
+                      length="2"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEtablissementCode]"
+                      name="TrancheEffectifEtablissementCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEtablissementLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEtablissementLibelle]"
+                      length="255"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEtablissementLibelle]"
+                      name="TrancheEffectifEtablissementLibelle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[AnneeRefEffectif]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[AnneeRefEffectif]"
+                      name="AnneeRefEffectif"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Adresse1]"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse1]"
+                      name="Adresse1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Adresse2]"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse2]"
+                      name="Adresse2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Adresse3]"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse3]"
+                      name="Adresse3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[CodePostal]"
+                      length="5"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[CodePostal]"
+                      name="CodePostal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Pays]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Pays]"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Pays]"
+                      name="Pays"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[EtablissementKey]"
+                      dataType="i4"
+                      name="EtablissementKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[EntrepriseKey]"
+                      dataType="i4"
+                      name="EntrepriseKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[NAFKey]"
+                      dataType="i4"
+                      name="NAFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[ArrondissementKey]"
+                      dataType="i4"
+                      name="ArrondissementKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[NIC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="NIC" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="SIRET" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[IsSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IsSiege" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="EtatAdministratif" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IsEmployeur" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEtablissementCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="TrancheEffectifEtablissementCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[TrancheEffectifEtablissementLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TrancheEffectifEtablissementLibelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      dataType="i4"
+                      name="AnneeRefEffectif" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Adresse1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Adresse1" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Adresse2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Adresse2" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Adresse3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Adresse3" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CodePostal" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].ExternalColumns[Pays]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Pays" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[EtablissementKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[EtablissementKey]"
+                      name="EtablissementKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[EntrepriseKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[EntrepriseKey]"
+                      name="EntrepriseKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[NAFKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[NAFKey]"
+                      name="NAFKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[ArrondissementKey]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[ArrondissementKey]"
+                      name="ArrondissementKey" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[NIC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[NIC]"
+                      name="NIC" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[SIRET]"
+                      name="SIRET" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[IsSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[IsSiege]"
+                      name="IsSiege" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[EtatAdministratif]"
+                      name="EtatAdministratif" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[IsEmployeur]"
+                      name="IsEmployeur" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEtablissementCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEtablissementCode]"
+                      name="TrancheEffectifEtablissementCode" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEtablissementLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[TrancheEffectifEtablissementLibelle]"
+                      name="TrancheEffectifEtablissementLibelle" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[AnneeRefEffectif]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[AnneeRefEffectif]"
+                      name="AnneeRefEffectif" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Adresse1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Adresse1]"
+                      name="Adresse1" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Adresse2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Adresse2]"
+                      name="Adresse2" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Adresse3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Adresse3]"
+                      name="Adresse3" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[CodePostal]"
+                      name="CodePostal" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Pays]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[Pays]"
+                      name="Pays" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy tmpEtablissement\tmpEtablissement"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="tmpEtablissement"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[tmpEtablissement]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy tmpEtablissement\tmpEtablissement.Connections[OleDbConnection]"
+                  connectionManagerID="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAC_DWH_SO-DATA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[EtablissementKey]"
+                      cachedDataType="i4"
+                      cachedName="EtablissementKey"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[EtablissementKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EtablissementKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[EntrepriseKey]"
+                      cachedDataType="i4"
+                      cachedName="EntrepriseKey"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[EntrepriseKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EntrepriseKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[NAFKey]"
+                      cachedDataType="i4"
+                      cachedName="NAFKey"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[NAFKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[NAFKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[ArrondissementKey]"
+                      cachedDataType="i4"
+                      cachedName="ArrondissementKey"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[ArrondissementKey]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[ArrondissementKey]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[NIC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="NIC"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[NIC]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[NIC]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[SIRET]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="SIRET"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[SIRET]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[SIRET]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[IsSiege]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="IsSiege"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[IsSiege]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[IsSiege]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[EtatAdministratif]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="EtatAdministratif"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[EtatAdministratif]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[EtatAdministratif]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[IsEmployeur]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="IsEmployeur"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[IsEmployeur]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[IsEmployeur]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[TrancheEffectifEtablissementCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="TrancheEffectifEtablissementCode"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEtablissementCode]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEtablissementCode]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[TrancheEffectifEtablissementLibelle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TrancheEffectifEtablissementLibelle"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEtablissementLibelle]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[TrancheEffectifEtablissementLibelle]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[AnneeRefEffectif]"
+                      cachedDataType="i4"
+                      cachedName="AnneeRefEffectif"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[AnneeRefEffectif]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[Adresse1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Adresse1"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Adresse1]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse1]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[Adresse2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Adresse2"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Adresse2]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse2]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[Adresse3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Adresse3"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Adresse3]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Adresse3]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[CodePostal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="CodePostal"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[CodePostal]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[CodePostal]" />
+                    <inputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].Columns[Pays]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="Pays"
+                      externalMetadataColumnId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Pays]"
+                      lineageId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB].Columns[Pays]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[EtablissementKey]"
+                      dataType="i4"
+                      name="EtablissementKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[EntrepriseKey]"
+                      dataType="i4"
+                      name="EntrepriseKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[NAFKey]"
+                      dataType="i4"
+                      name="NAFKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[ArrondissementKey]"
+                      dataType="i4"
+                      name="ArrondissementKey" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[NIC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="NIC" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="SIRET" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[IsSiege]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IsSiege" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[EtatAdministratif]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="EtatAdministratif" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[IsEmployeur]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="IsEmployeur" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEtablissementCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="TrancheEffectifEtablissementCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[TrancheEffectifEtablissementLibelle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TrancheEffectifEtablissementLibelle" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[AnneeRefEffectif]"
+                      dataType="i4"
+                      name="AnneeRefEffectif" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Adresse1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Adresse1" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Adresse2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Adresse2" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Adresse3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Adresse3" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="CodePostal" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB].ExternalColumns[Pays]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="Pays" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy tmpEtablissement\tmpEtablissement.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\tmpEtablissement.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy tmpEtablissement\tmpEtablissement.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpEtablissement\tmpEtablissement.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copy tmpEtablissement.Paths[Sortie de source OLE DB]"
+              endId="Package\Copy tmpEtablissement\tmpEtablissement.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source OLE DB"
+              startId="Package\Copy tmpEtablissement\DimEtablissement.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{ADFF42F0-A231-40B9-93A3-BBB965F578BA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.tmpEtablissement&#xA;TRUNCATE TABLE dbo.tmpEntreprise&#xA;TRUNCATE TABLE dbo.DimCategorieJuridique&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{33B46483-86DC-409B-822F-B04C6EB42B5B}"
+      DTS:From="Package\Copy tmpEtablissement"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Copy tmpEntreprise" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{CCA7EEEE-2913-4E75-A5BC-7B728C1DA4A9}"
+      DTS:From="Package\Truncate tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Copy tmpEtablissement" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{4D0CE5E8-B49D-454D-9F84-414516F223D7}"
+      DTS:From="Package\Copy tmpEntreprise"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 2"
+      DTS:To="Package\Copy DimCategorieJuridique" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Copy tmpEntreprise"
+          TopLeft="265.714290239373,214.88235595482" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Copy tmpEtablissement"
+          TopLeft="260.000004427774,113.176472175493" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Truncate tables"
+          TopLeft="260.000004427774,11.4705883961648" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="352.857147333574,154.776472175493">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.105883779327"
+              Start="0,0"
+              End="0,52.605883779327">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.605883779327" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="354.400004427774,53.0705883961648">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.1058837793282"
+              Start="0,0"
+              End="0,52.6058837793282">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.6058837793282" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Copy DimCategorieJuridique"
+          TopLeft="252.857147163274,310.470592589527" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="354.885718701324,256.48235595482">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.9882366347071"
+              Start="0,0"
+              End="0,46.4882366347071">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.4882366347071" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="196.8,41.6"
+          Id="Package\Copy DimArrondissement"
+          TopLeft="552.142866545794,127.34117788625" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Copy tmpEntreprise">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,41.6"
+          Id="Package\Copy tmpEntreprise\tmpEntreprise"
+          TopLeft="630.5,161.5" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Copy tmpEntreprise\DimEntreprise"
+          TopLeft="307,166" />
+        <EdgeLayout
+          Id="Package\Copy tmpEntreprise.Paths[Sortie de source OLE DB]"
+          TopLeft="451.8,184.55">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178.7,0"
+              Start="0,0"
+              End="171.2,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="171.2,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy tmpEntreprise\DimEntreprise">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy tmpEntreprise\tmpEntreprise">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Copy tmpEtablissement">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Copy tmpEtablissement\tmpEtablissement"
+          TopLeft="477.142865268552,137.647060753978" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Copy tmpEtablissement\DimEtablissement"
+          TopLeft="116.428573411338,136.8823548609" />
+        <EdgeLayout
+          Id="Package\Copy tmpEtablissement.Paths[Sortie de source OLE DB]"
+          TopLeft="278.828573411338,158.064707807439">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="198.314291857214,0"
+              Start="0,0"
+              End="190.814291857214,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="190.814291857214,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy tmpEtablissement\DimEtablissement">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy tmpEtablissement\tmpEtablissement">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Copy DimCategorieJuridique">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Copy DimCategorieJuridique\datCatégorieJuridique"
+          TopLeft="165,168" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Copy DimCategorieJuridique\DimCategorieJuridique"
+          TopLeft="621,165" />
+        <EdgeLayout
+          Id="Package\Copy DimCategorieJuridique.Paths[Sortie de source OLE DB]"
+          TopLeft="345.8,187.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="275.2,0"
+              Start="0,0"
+              End="267.7,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="267.7,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimCategorieJuridique\datCatégorieJuridique">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimCategorieJuridique\DimCategorieJuridique">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Copy DimArrondissement">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Copy DimArrondissement\Source OLE DB"
+          TopLeft="232,185" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Copy DimArrondissement\Destination OLE DB"
+          TopLeft="603,187" />
+        <EdgeLayout
+          Id="Package\Copy DimArrondissement.Paths[Sortie de source OLE DB]"
+          TopLeft="381.6,206.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221.4,0"
+              Start="0,0"
+              End="213.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="213.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimArrondissement\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimArrondissement\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

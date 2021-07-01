@@ -1,0 +1,1162 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/18/2021 11:55:15 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="P0696"
+  DTS:CreatorName="ALPHA\DIAWA"
+  DTS:DTSID="{71F5079A-2037-4CCB-9839-93306014B19B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LocaleID="1036"
+  DTS:ObjectName="So-Data"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{FA3EC940-6DF4-4A34-B4E5-769449062E1F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LAC_STG_SO-DATA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D978592D-DC64-45E4-A09A-6C8A9AE6ECF6}"
+      DTS:ObjectName="LAC_STG_SO-DATA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_STG_SO-DATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copy tmpOffre"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{E24B51DD-87A7-433A-9C93-0C6F72C78CC7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy tmpOffre"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copy tmpOffre\datOffre"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="datOffre"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[datOffre]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy tmpOffre\datOffre.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LAC_STG_SO-DATA]"
+                  connectionManagerRefId="Package.ConnectionManagers[LAC_STG_SO-DATA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[IdOffre]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[IdOffre]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[IdOffre]"
+                      name="IdOffre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Signature]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Signature]"
+                      length="50"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Signature]"
+                      name="Signature"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Societe]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Societe]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Societe]"
+                      name="Societe"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SIREN]"
+                      length="9"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SIREN]"
+                      name="SIREN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SIRET]"
+                      length="14"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SIRET]"
+                      name="SIRET"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Contrat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Contrat]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Contrat]"
+                      name="Contrat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeNAF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[CodeNAF]"
+                      length="10"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeNAF]"
+                      name="CodeNAF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Titre]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Titre]"
+                      length="255"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Titre]"
+                      name="Titre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Date]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[NiveauEtudeRequis]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[NiveauEtudeRequis]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[NiveauEtudeRequis]"
+                      name="NiveauEtudeRequis"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[LibelleDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[LibelleDepartement]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[LibelleDepartement]"
+                      name="LibelleDepartement"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[CodeDepartement]"
+                      length="10"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeDepartement]"
+                      name="CodeDepartement"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[CodePostal]"
+                      length="10"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodePostal]"
+                      name="CodePostal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[TypeContrat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[TypeContrat]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[TypeContrat]"
+                      name="TypeContrat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Ville]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Ville]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Ville]"
+                      name="Ville"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Latitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Latitude]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Latitude]"
+                      name="Latitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Longitude]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Longitude]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Longitude]"
+                      name="Longitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMinimum]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMinimum]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMinimum]"
+                      name="SalaireMinimum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMaximum]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMaximum]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMaximum]"
+                      name="SalaireMaximum"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Experience]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Experience]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Experience]"
+                      name="Experience"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Expire]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Expire]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Expire]"
+                      name="Expire"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Rome]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Rome]"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Rome]"
+                      name="Rome"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[IdOffre]"
+                      dataType="i4"
+                      name="IdOffre" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Signature]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Signature" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Societe]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Societe" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="SIREN" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="SIRET" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Contrat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Contrat" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[CodeNAF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodeNAF" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Titre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Titre" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[NiveauEtudeRequis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NiveauEtudeRequis" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[LibelleDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="LibelleDepartement" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[CodeDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodeDepartement" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodePostal" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[TypeContrat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TypeContrat" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Ville]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Ville" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Latitude]"
+                      dataType="r8"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Longitude]"
+                      dataType="r8"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMinimum]"
+                      dataType="r8"
+                      name="SalaireMinimum" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMaximum]"
+                      dataType="r8"
+                      name="SalaireMaximum" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Experience]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Experience" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Expire]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Expire" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Rome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Rome" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[IdOffre]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[IdOffre]"
+                      name="IdOffre" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Signature]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Signature]"
+                      name="Signature" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Societe]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Societe]"
+                      name="Societe" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SIREN]"
+                      name="SIREN" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SIRET]"
+                      name="SIRET" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Contrat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Contrat]"
+                      name="Contrat" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[CodeNAF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[CodeNAF]"
+                      name="CodeNAF" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Titre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Titre]"
+                      name="Titre" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Date]"
+                      name="Date" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[NiveauEtudeRequis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[NiveauEtudeRequis]"
+                      name="NiveauEtudeRequis" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[LibelleDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[LibelleDepartement]"
+                      name="LibelleDepartement" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[CodeDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[CodeDepartement]"
+                      name="CodeDepartement" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[CodePostal]"
+                      name="CodePostal" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[TypeContrat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[TypeContrat]"
+                      name="TypeContrat" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Ville]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Ville]"
+                      name="Ville" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Latitude]"
+                      dataType="r8"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Latitude]"
+                      name="Latitude" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Longitude]"
+                      dataType="r8"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Longitude]"
+                      name="Longitude" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMinimum]"
+                      dataType="r8"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMinimum]"
+                      name="SalaireMinimum" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMaximum]"
+                      dataType="r8"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMaximum]"
+                      name="SalaireMaximum" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Experience]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Experience]"
+                      name="Experience" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Expire]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Expire]"
+                      name="Expire" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Rome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Rome]"
+                      name="Rome" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy tmpOffre\tmpOffre"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="tmpOffre"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[tmpOffre]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy tmpOffre\tmpOffre.Connections[OleDbConnection]"
+                  connectionManagerID="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAC_DWH_SO-DATA]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Signature]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Signature"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Signature]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Signature]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Societe]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Societe"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Societe]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Societe]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[SIREN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="SIREN"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SIREN]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SIREN]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[SIRET]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="SIRET"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SIRET]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SIRET]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Contrat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Contrat"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Contrat]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Contrat]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[CodeNAF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodeNAF"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[CodeNAF]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeNAF]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Titre]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Titre"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Titre]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Titre]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Date]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[NiveauEtudeRequis]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="NiveauEtudeRequis"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[NiveauEtudeRequis]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[NiveauEtudeRequis]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[LibelleDepartement]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="LibelleDepartement"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[LibelleDepartement]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[LibelleDepartement]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[CodeDepartement]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodeDepartement"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[CodeDepartement]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeDepartement]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[CodePostal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CodePostal"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[CodePostal]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodePostal]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[TypeContrat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TypeContrat"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[TypeContrat]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[TypeContrat]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Ville]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Ville"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Ville]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Ville]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Latitude]"
+                      cachedDataType="r8"
+                      cachedName="Latitude"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Latitude]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Latitude]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Longitude]"
+                      cachedDataType="r8"
+                      cachedName="Longitude"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Longitude]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Longitude]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[SalaireMinimum]"
+                      cachedDataType="r8"
+                      cachedName="SalaireMinimum"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMinimum]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMinimum]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[SalaireMaximum]"
+                      cachedDataType="r8"
+                      cachedName="SalaireMaximum"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMaximum]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMaximum]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Experience]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Experience"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Experience]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Experience]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Expire]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Expire"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Expire]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Expire]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Rome]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Rome"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Rome]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Rome]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[IdOffre]"
+                      cachedDataType="i4"
+                      cachedName="IdOffre"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[IdOffre]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[IdOffre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[IdOffre]"
+                      dataType="i4"
+                      name="IdOffre" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Signature]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Signature" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Societe]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Societe" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SIREN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="SIREN" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SIRET]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="SIRET" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Contrat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Contrat" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[CodeNAF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodeNAF" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Titre]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Titre" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Date]"
+                      dataType="dbDate"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[NiveauEtudeRequis]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NiveauEtudeRequis" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[LibelleDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="LibelleDepartement" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[CodeDepartement]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodeDepartement" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[CodePostal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CodePostal" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[TypeContrat]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TypeContrat" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Ville]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Ville" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Latitude]"
+                      dataType="r8"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Longitude]"
+                      dataType="r8"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMinimum]"
+                      dataType="r8"
+                      name="SalaireMinimum" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMaximum]"
+                      dataType="r8"
+                      name="SalaireMaximum" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Experience]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Experience" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Expire]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Expire" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Rome]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Rome" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy tmpOffre\tmpOffre.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpOffre\tmpOffre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy tmpOffre\tmpOffre.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copy tmpOffre.Paths[Sortie de source OLE DB]"
+              endId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source OLE DB"
+              startId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate tmpOffre"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{2421D613-0DB1-43FD-B74F-1C95E257A351}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate tmpOffre"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{D52C3D55-FEEC-4A6F-A889-C68A1F4ADC61}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.tmpOffre" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{0CC39E56-D52D-45B2-8E0B-8A5384676D87}"
+      DTS:From="Package\Truncate tmpOffre"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Copy tmpOffre" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Truncate tmpOffre"
+          TopLeft="257.142861521974,54.2941184085133" />
+        <NodeLayout
+          Size="165.6,41.6"
+          Id="Package\Copy tmpOffre"
+          TopLeft="257.142861521974,152.176472722453" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="339.942861521974,95.8941184085134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.2823543139396"
+              Start="0,0"
+              End="0,48.7823543139396">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.7823543139396" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Copy tmpOffre">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="117.6,41.6"
+          Id="Package\Copy tmpOffre\datOffre"
+          TopLeft="141.428573837086,109.352942710104" />
+        <NodeLayout
+          Size="120.8,41.6"
+          Id="Package\Copy tmpOffre\tmpOffre"
+          TopLeft="437.857150313806,112.411766282415" />
+        <EdgeLayout
+          Id="Package\Copy tmpOffre.Paths[Sortie de source OLE DB]"
+          TopLeft="259.028573837086,131.68235449626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="178.82857647672,0"
+              Start="0,0"
+              End="171.32857647672,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="171.32857647672,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy tmpOffre\datOffre">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy tmpOffre\tmpOffre">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
