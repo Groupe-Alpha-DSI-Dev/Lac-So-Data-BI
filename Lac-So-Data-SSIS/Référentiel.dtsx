@@ -7,12 +7,12 @@
   DTS:CreatorName="ALPHA\DIAWA"
   DTS:DTSID="{5FB6FD43-7428-4412-9A62-97B3638977FB}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="1036"
   DTS:ObjectName="Référentiel"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{67BD2D9E-45D6-44DB-869C-028BDBCB7AA3}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{B0000571-AC0D-4FD8-8D59-AC8A8B045DF7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -3894,47 +3894,47 @@ where [refTable].[DepartementCode] = ?</property>
       DTS:To="Package\Copy DimDepartement" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
-<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
-<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="200.666666666667,41.3333333333334"
+          Size="201,41"
           Id="Package\Copy DimCommune"
           TopLeft="207.857146396929,301.538238959288" />
         <NodeLayout
-          Size="185.333333333334,41.3333333333334"
+          Size="185,41"
           Id="Package\Copy DimDepartement"
           TopLeft="504.285722873649,39.1382338543255" />
         <NodeLayout
-          Size="200.666666666667,41.3333333333334"
+          Size="201,41"
           Id="Package\Copy DimNAF"
           TopLeft="207.857146396929,127.53235454184" />
         <NodeLayout
-          Size="200.666666666667,41.3333333333334"
+          Size="201,41"
           Id="Package\Copy DimROME"
           TopLeft="502.142865694299,208.658825760152" />
         <NodeLayout
-          Size="194.666666666667,42.6666666666667"
+          Size="195,43"
           Id="Package\Truncate  DimCommune"
           TopLeft="207.857146396929,214.535296750564" />
         <NodeLayout
-          Size="203.333333333334,41.3333333333334"
+          Size="203,41"
           Id="Package\Truncate DimDepartement"
           TopLeft="496.4285798827,127.961764231313" />
         <NodeLayout
-          Size="200.666666666667,41.3333333333334"
+          Size="201,41"
           Id="Package\Truncate DimNAF"
           TopLeft="207.857146396929,40.5294123331156" />
         <NodeLayout
-          Size="200.666666666667,41.3333333333334"
+          Size="201,41"
           Id="Package\Truncate DimROME"
           TopLeft="495.71429415625,297.48235613714" />
         <EdgeLayout
@@ -4100,17 +4100,17 @@ where [refTable].[DepartementCode] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="140.8,41.6"
-          Id="Package\Copy DimCommune\datCommune"
-          TopLeft="157,106" />
-        <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Copy DimCommune\Destination OLE DB"
           TopLeft="564,109" />
         <NodeLayout
-          Size="140,41.6"
+          Size="140,42"
           Id="Package\Copy DimCommune\Departement"
           TopLeft="386.5,217.5" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Copy DimCommune\datCommune"
+          TopLeft="157,106" />
         <EdgeLayout
           Id="Package\Copy DimCommune.Paths[Sortie de source OLE DB]"
           TopLeft="227.4,147.6">
@@ -4237,15 +4237,15 @@ where [refTable].[DepartementCode] = ?</property>
     design-time-name="Package\Copy DimDepartement">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Copy DimDepartement\datDepartement"
-          TopLeft="148.571431101585,146.823531470909" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="158.4,41.6"
           Id="Package\Copy DimDepartement\DimDepartement"
           TopLeft="450.714293389904,144.529413791676" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Copy DimDepartement\datDepartement"
+          TopLeft="148.571431101585,146.823531470909" />
         <EdgeLayout
           Id="Package\Copy DimDepartement.Paths[Sortie de source OLE DB]"
           TopLeft="303.771431101585,166.476472631292">
@@ -4265,7 +4265,9 @@ where [refTable].[DepartementCode] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4303,11 +4305,11 @@ where [refTable].[DepartementCode] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Copy DimNAF\datNAF"
           TopLeft="163.571431357033,147.588237363987" />
         <NodeLayout
-          Size="116,41.6"
+          Size="116,42"
           Id="Package\Copy DimNAF\DimNAF"
           TopLeft="424.285721511257,146.058825577832" />
         <EdgeLayout
@@ -4367,13 +4369,13 @@ where [refTable].[DepartementCode] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="121.6,41.6"
-          Id="Package\Copy DimROME\datROME"
-          TopLeft="148.571431101585,146.823531470909" />
-        <NodeLayout
-          Size="125.6,41.6"
+          Size="126,42"
           Id="Package\Copy DimROME\DimROME"
           TopLeft="450.714293389904,144.529413791676" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Copy DimROME\datROME"
+          TopLeft="148.571431101585,146.823531470909" />
         <EdgeLayout
           Id="Package\Copy DimROME.Paths[Sortie de source OLE DB]"
           TopLeft="270.171431101585,166.476472631293">

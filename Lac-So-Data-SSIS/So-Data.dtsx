@@ -7,12 +7,12 @@
   DTS:CreatorName="ALPHA\DIAWA"
   DTS:DTSID="{71F5079A-2037-4CCB-9839-93306014B19B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="1036"
   DTS:ObjectName="So-Data"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{FA3EC940-6DF4-4A34-B4E5-769449062E1F}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{B2CC929C-3477-4AF1-8825-376970259614}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,6 +23,8 @@
       DTS:ObjectName="LAC_STG_SO-DATA">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_STG_SO-DATA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -181,12 +183,10 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Titre]"
-                      codePage="1252"
-                      dataType="str"
+                      dataType="nText"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Titre]"
-                      length="255"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Titre]"
                       name="Titre"
                       truncationRowDisposition="FailComponent" />
@@ -284,24 +284,6 @@
                       name="Longitude"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMinimum]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMinimum]"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMinimum]"
-                      name="SalaireMinimum"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMaximum]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMaximum]"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMaximum]"
-                      name="SalaireMaximum"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Experience]"
                       codePage="1252"
                       dataType="str"
@@ -333,6 +315,24 @@
                       length="100"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Rome]"
                       name="Rome"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Salaire]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Salaire]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Salaire]"
+                      name="Salaire"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[RomeScore]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[RomeScore]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[RomeScore]"
+                      name="RomeScore"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -379,9 +379,7 @@
                       name="CodeNAF" />
                     <externalMetadataColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Titre]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="nText"
                       name="Titre" />
                     <externalMetadataColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Date]"
@@ -432,14 +430,6 @@
                       dataType="r8"
                       name="Longitude" />
                     <externalMetadataColumn
-                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMinimum]"
-                      dataType="r8"
-                      name="SalaireMinimum" />
-                    <externalMetadataColumn
-                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[SalaireMaximum]"
-                      dataType="r8"
-                      name="SalaireMaximum" />
-                    <externalMetadataColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Experience]"
                       codePage="1252"
                       dataType="str"
@@ -457,6 +447,14 @@
                       dataType="str"
                       length="100"
                       name="Rome" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[Salaire]"
+                      dataType="r8"
+                      name="Salaire" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].ExternalColumns[RomeScore]"
+                      dataType="r8"
+                      name="RomeScore" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -513,9 +511,7 @@
                       name="CodeNAF" />
                     <outputColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Titre]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="nText"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Titre]"
                       name="Titre" />
                     <outputColumn
@@ -576,15 +572,10 @@
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Longitude]"
                       name="Longitude" />
                     <outputColumn
-                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMinimum]"
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Salaire]"
                       dataType="r8"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMinimum]"
-                      name="SalaireMinimum" />
-                    <outputColumn
-                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMaximum]"
-                      dataType="r8"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[SalaireMaximum]"
-                      name="SalaireMaximum" />
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Salaire]"
+                      name="Salaire" />
                     <outputColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Experience]"
                       codePage="1252"
@@ -606,6 +597,11 @@
                       length="100"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[Rome]"
                       name="Rome" />
+                    <outputColumn
+                      refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[RomeScore]"
+                      dataType="r8"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[RomeScore]"
+                      name="RomeScore" />
                     <outputColumn
                       refId="Package\Copy tmpOffre\datOffre.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
                       dataType="i4"
@@ -696,6 +692,12 @@
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[IdOffre]"
+                      cachedDataType="i4"
+                      cachedName="IdOffre"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[IdOffre]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[IdOffre]" />
+                    <inputColumn
                       refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Signature]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -745,9 +747,7 @@
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[CodeNAF]" />
                     <inputColumn
                       refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Titre]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="255"
+                      cachedDataType="nText"
                       cachedName="Titre"
                       externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Titre]"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Titre]" />
@@ -818,18 +818,6 @@
                       externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Longitude]"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Longitude]" />
                     <inputColumn
-                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[SalaireMinimum]"
-                      cachedDataType="r8"
-                      cachedName="SalaireMinimum"
-                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMinimum]"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMinimum]" />
-                    <inputColumn
-                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[SalaireMaximum]"
-                      cachedDataType="r8"
-                      cachedName="SalaireMaximum"
-                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMaximum]"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[SalaireMaximum]" />
-                    <inputColumn
                       refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Experience]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -854,11 +842,17 @@
                       externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Rome]"
                       lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Rome]" />
                     <inputColumn
-                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[IdOffre]"
-                      cachedDataType="i4"
-                      cachedName="IdOffre"
-                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[IdOffre]"
-                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[IdOffre]" />
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[Salaire]"
+                      cachedDataType="r8"
+                      cachedName="Salaire"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Salaire]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[Salaire]" />
+                    <inputColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].Columns[RomeScore]"
+                      cachedDataType="r8"
+                      cachedName="RomeScore"
+                      externalMetadataColumnId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[RomeScore]"
+                      lineageId="Package\Copy tmpOffre\datOffre.Outputs[Sortie de source OLE DB].Columns[RomeScore]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -904,9 +898,7 @@
                       name="CodeNAF" />
                     <externalMetadataColumn
                       refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Titre]"
-                      codePage="1252"
-                      dataType="str"
-                      length="255"
+                      dataType="nText"
                       name="Titre" />
                     <externalMetadataColumn
                       refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Date]"
@@ -957,13 +949,9 @@
                       dataType="r8"
                       name="Longitude" />
                     <externalMetadataColumn
-                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMinimum]"
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Salaire]"
                       dataType="r8"
-                      name="SalaireMinimum" />
-                    <externalMetadataColumn
-                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[SalaireMaximum]"
-                      dataType="r8"
-                      name="SalaireMaximum" />
+                      name="Salaire" />
                     <externalMetadataColumn
                       refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[Experience]"
                       codePage="1252"
@@ -982,6 +970,10 @@
                       dataType="str"
                       length="100"
                       name="Rome" />
+                    <externalMetadataColumn
+                      refId="Package\Copy tmpOffre\tmpOffre.Inputs[Entrée de destination OLE DB].ExternalColumns[RomeScore]"
+                      dataType="r8"
+                      name="RomeScore" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1050,39 +1042,39 @@
       DTS:To="Package\Copy tmpOffre" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
-<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
-<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="165.6,41.6"
-          Id="Package\Truncate tmpOffre"
-          TopLeft="257.142861521974,54.2941184085133" />
-        <NodeLayout
-          Size="165.6,41.6"
+          Size="166,42"
           Id="Package\Copy tmpOffre"
           TopLeft="257.142861521974,152.176472722453" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Truncate tmpOffre"
+          TopLeft="256.142861521974,51.2941184085133" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
-          TopLeft="339.942861521974,95.8941184085134">
+          TopLeft="339.642861521974,93.2941184085133">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.2823543139396"
+              EndConnector="0,58.8823543139397"
               Start="0,0"
-              End="0,48.7823543139396">
+              End="0,51.3823543139397">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.7823543139396" />
+                    End="0,51.3823543139397" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1100,27 +1092,39 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="117.6,41.6"
+          Size="118,42"
           Id="Package\Copy tmpOffre\datOffre"
           TopLeft="141.428573837086,109.352942710104" />
         <NodeLayout
-          Size="120.8,41.6"
+          Size="121,42"
           Id="Package\Copy tmpOffre\tmpOffre"
-          TopLeft="437.857150313806,112.411766282415" />
+          TopLeft="427,99" />
         <EdgeLayout
           Id="Package\Copy tmpOffre.Paths[Sortie de source OLE DB]"
-          TopLeft="259.028573837086,131.68235449626">
+          TopLeft="259.428573837086,130.352942710104">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="178.82857647672,0"
+              EndConnector="167.571426162914,-10.352942710104"
               Start="0,0"
-              End="171.32857647672,0">
+              End="160.071426162914,-10.352942710104">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="171.32857647672,0" />
+                    End="79.785713081457,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79.785713081457,0"
+                    Point2="83.785713081457,0"
+                    Point3="83.785713081457,-4" />
+                  <mssgle:LineSegment
+                    End="83.785713081457,-6.352942710104" />
+                  <mssgle:CubicBezierSegment
+                    Point1="83.785713081457,-6.352942710104"
+                    Point2="83.785713081457,-10.352942710104"
+                    Point3="87.785713081457,-10.352942710104" />
+                  <mssgle:LineSegment
+                    End="160.071426162914,-10.352942710104" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

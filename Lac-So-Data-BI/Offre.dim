@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9f3cdcb6-90a9-4426-a065-c50e3a371f52" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c4d4cc9b-4727-4dc8-9a99-e0db876c9d6e" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Offre</ID>
   <Name>Offre</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1822" scrolltop="-1536" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7408" y="11536" backcolor="16777215" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-1822" scrolltop="-1536" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="10901" y="17648" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -68,113 +68,105 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a01281f7-bb26-4c24-8dba-b2a536bf79be">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="eb8137ac-07a0-4cb9-8232-e4e1054d3a85">
     <DataSourceViewID>LAC DWH SO-DATA</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="aacf924d-525e-4fe2-a65d-a5b5ba193aaf">
+  <ErrorConfiguration dwd:design-time-name="e4c030f7-bd96-44fa-b82e-120fb8a77c67">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="b3e978d1-359f-42ec-9773-9778b9033cb4">
+    <Attribute dwd:design-time-name="f29df9c8-60e7-4b7f-83e0-f75691eac0cb">
       <ID>OffreKey</ID>
       <Name>Offre</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0f90b66e-3a91-48a7-8c13-9576003ce89f">
+        <KeyColumn dwd:design-time-name="8390e7a0-d2ab-4567-935f-6eb9a3cd8e67">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2ceffd2f-2344-45be-baa1-7b393da16d52">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="771e2c1b-63a6-4f9e-8185-56f0c0daa0cd">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>OffreKey</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
-      <NameColumn dwd:design-time-name="f89ba849-6b4b-4b3e-a20c-b903ef7046ca">
+      <NameColumn dwd:design-time-name="86fe7557-c247-48e2-9d6c-cf6acb32f999">
         <DataType>WChar</DataType>
         <DataSize>50</DataSize>
-        <Source xsi:type="ColumnBinding" dwd:design-time-name="803aca24-625e-4014-aa48-8feda01e9559">
+        <Source xsi:type="ColumnBinding" dwd:design-time-name="836f5b5c-47ba-42b0-aa04-b321e266dc43">
           <TableID>dbo_DimOffre</TableID>
           <ColumnID>Signature</ColumnID>
         </Source>
       </NameColumn>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="91b67fad-c297-4852-908d-c5d33836caaf">
+        <AttributeRelationship dwd:design-time-name="bf55a7f9-1485-40eb-9feb-b74317db5ca8">
           <AttributeID>Titre</AttributeID>
           <Name>Titre</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="f8a6a3df-242f-4e3d-9ef8-a0eba3280e10">
+        <AttributeRelationship dwd:design-time-name="4b9cbcd5-48f6-47a8-8d8f-542dd05fff41">
           <AttributeID>Société</AttributeID>
           <Name>Société</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="dda33895-6b27-4af3-b516-440b856c21f4">
+        <AttributeRelationship dwd:design-time-name="9e43b260-f2bf-445b-b1f7-b1085c5c828e">
           <AttributeID>Contrat</AttributeID>
           <Name>Contrat</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="370ec4fe-296c-4400-a003-80fbaf2ffd6d">
+        <AttributeRelationship dwd:design-time-name="13270a0f-3d22-45b8-b921-92c97766d78e">
           <AttributeID>Niveau étude requis</AttributeID>
           <Name>Niveau étude requis</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="c42efcb1-b6f1-419d-b30b-b6a6faf99a75">
+        <AttributeRelationship dwd:design-time-name="3ba772f6-7af9-433b-8c18-f8b25a6ceee4">
           <AttributeID>Type contrat</AttributeID>
           <Name>Type contrat</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="aa6aa8f6-0149-4a0b-b62e-e9f1e100b79f">
+        <AttributeRelationship dwd:design-time-name="554d7dd8-ef55-40e6-9fde-d40ee5494edb">
           <AttributeID>Expérience</AttributeID>
           <Name>Expérience</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="366ca353-7981-4034-bafb-0d6fbf48db00">
+        <AttributeRelationship dwd:design-time-name="0817eaae-ae2d-4a05-a725-ed5305b61662">
           <AttributeID>Expiré</AttributeID>
           <Name>Expiré</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="11b2f5d0-28cf-44d2-806f-8bec14bc28a6">
+        <AttributeRelationship dwd:design-time-name="363d6c07-baff-4758-902a-0da91d6ad774">
           <AttributeID>Date</AttributeID>
           <Name>Date</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="6e28804f-8eac-4650-b616-9a56e5ef8e0b">
-          <AttributeID>Salaire Minimum</AttributeID>
-          <Name>Salaire Minimum</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="b9c5a1f3-1434-476c-a357-87921bc5ca6e">
-          <AttributeID>Salaire Maximum</AttributeID>
-          <Name>Salaire Maximum</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="38da96d4-c272-4fdd-82ca-aeb63f91c82f">
+        <AttributeRelationship dwd:design-time-name="13f98a7d-e82d-4f40-a55a-b80c5dafdd8e">
           <AttributeID>Code Postal  Ville</AttributeID>
           <Name>Code Postal  Ville</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="78f866b3-820a-40cd-a823-9ca871cf3b6c">
+        <AttributeRelationship dwd:design-time-name="f2c90430-235b-4b3a-8e57-2358d47b7839">
           <AttributeID>Departement Key</AttributeID>
           <Name>DepartementKey</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="cc805af9-92cd-42b6-9971-e851e2751a48">
-          <AttributeID>Salaire Moyen</AttributeID>
-          <Name>Salaire moyen</Name>
-        </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="f0af2f04-6698-452f-b937-f2d59e425f9e">
+        <AttributeRelationship dwd:design-time-name="6b49f6ed-bb66-4f29-8374-dc83643cc0cb">
           <AttributeID>Latitude</AttributeID>
           <Name>Latitude</Name>
         </AttributeRelationship>
-        <AttributeRelationship dwd:design-time-name="73804a15-19d5-43c2-a6a7-836e4e2e004a">
+        <AttributeRelationship dwd:design-time-name="fe4112e9-9c7b-4aae-a178-ee5014550b18">
           <AttributeID>Longitude</AttributeID>
           <Name>Longitude</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="e52a27af-a0f3-46c5-9c49-1b8fbb1b1173">
+          <AttributeID>Salaire</AttributeID>
+          <Name>Salaire</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="5f7fff42-4802-48a9-8df3-c687bf3ae160">
+    <Attribute dwd:design-time-name="df407d68-3b13-424d-9d62-8de0245c7f4e">
       <ID>Titre</ID>
       <Name>Titre</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="4918252c-7005-40b8-8215-fa529c26bf6b">
+        <KeyColumn dwd:design-time-name="231e4b86-7542-4bca-b7dd-a65d70a91a91">
           <DataType>WChar</DataType>
           <DataSize>255</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="2322109c-1ea7-4342-9d77-ab2484eee1d0">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2e6d5ca4-2abb-4f93-be8a-21f3d5430e7f">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Titre</ColumnID>
           </Source>
@@ -184,14 +176,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e59015d6-1896-42ca-9c26-c43025fa5474">
+    <Attribute dwd:design-time-name="56339e79-dbd1-477e-9e19-d8ed63caad80">
       <ID>Société</ID>
       <Name>Société</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="df5ef7eb-2906-4c75-ae3c-f3595a83de5f">
+        <KeyColumn dwd:design-time-name="6fbaf7e7-8977-4de7-955b-30627e99641f">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="4b91d30c-c0f1-4069-8435-938ab898cd90">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3a18586a-a6a4-4b7b-a86e-9d12072cd30e">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Societe</ColumnID>
           </Source>
@@ -201,14 +193,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="87f2b23f-9a3d-4ef8-8941-91c836698f1a">
+    <Attribute dwd:design-time-name="ab85f806-a323-4aab-a841-425711bba378">
       <ID>Contrat</ID>
       <Name>Contrat</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="dac31423-e7b3-4d37-9fa3-b83c60d58778">
+        <KeyColumn dwd:design-time-name="d0b48f90-ee16-4f67-805d-34e52683e4cc">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="fb20f51d-6112-4b18-898d-9e0d9c04d9ee">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="44c49a71-685b-4fc2-beb4-6125d59aa66a">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Contrat</ColumnID>
           </Source>
@@ -218,14 +210,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="c8067d09-240d-4a8f-90c0-cc91af5de9ae">
+    <Attribute dwd:design-time-name="2f87b472-a23c-41d7-999c-d219763a4786">
       <ID>Niveau étude requis</ID>
       <Name>Niveau étude requis</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="ee51370e-6989-4771-994e-bf971308c767">
+        <KeyColumn dwd:design-time-name="a7c60425-6ddf-4868-9867-ccd47ac48377">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="50c5356e-2dad-4024-a1c9-aab3c7f2ab12">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c85d5ee7-4282-482d-8c48-15e5f849725e">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>NiveauEtudeRequis</ColumnID>
           </Source>
@@ -235,14 +227,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="836d4311-ee57-442e-b270-8bd7efe58211">
+    <Attribute dwd:design-time-name="d1da5246-cae2-48bd-ab6c-6f6a9c6f5827">
       <ID>Type contrat</ID>
       <Name>Type contrat</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="0168da19-5a16-4102-aa63-b9a434b991ce">
+        <KeyColumn dwd:design-time-name="b4e87869-ac64-43d5-8a83-9c5b2a3c7c90">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="8fb5a7f1-5f9d-4df9-9a04-56ad60ad3e4f">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="468a4e6b-4f78-411c-99bc-0c11ec704f07">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>TypeContrat</ColumnID>
           </Source>
@@ -252,14 +244,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="deeee6af-9f79-4a6c-b98f-ed2ade44c5f7">
+    <Attribute dwd:design-time-name="b86bd80d-da73-4495-a5ea-ee83f515e6aa">
       <ID>Expérience</ID>
       <Name>Expérience</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="7f25c0ac-f073-4e45-b662-4acd9c3ffdc0">
+        <KeyColumn dwd:design-time-name="4ffb0a20-9df1-4740-a579-40606b713d6f">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="03b34c77-3220-4866-851f-4c4c17215946">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6bf6f18-0a43-48e6-b3f0-9c866b088b67">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Experience</ColumnID>
           </Source>
@@ -269,14 +261,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="cfd7a6e2-9760-4285-a72b-755d5be0ec5d">
+    <Attribute dwd:design-time-name="57f4027d-714f-4052-b840-86487f6ad210">
       <ID>Expiré</ID>
       <Name>Expiré</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6abbac94-f80f-4022-950d-0311b9f51097">
+        <KeyColumn dwd:design-time-name="63507b50-5beb-45a3-bb08-3b6b780bd05b">
           <DataType>WChar</DataType>
           <DataSize>100</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="715c8abe-e60f-4530-bad7-f48e5be3adbe">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="34e264d2-358d-4d2c-b4a6-9a1c1b5a773a">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Expire</ColumnID>
           </Source>
@@ -286,13 +278,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="a86def80-0039-4ae6-9034-2177b98a3253">
+    <Attribute dwd:design-time-name="d57f03d0-bc63-4aa1-bc7e-bf55d2be31d0">
       <ID>Date</ID>
       <Name>Date</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="e4d7f89b-2ada-4ab1-a4d3-500d38b4e8df">
+        <KeyColumn dwd:design-time-name="7faaf400-bb2a-4c8f-8ea4-2a669b193b67">
           <DataType>Date</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a180caba-4c6e-4179-b37b-e60a980ed367">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="910d7427-ef23-4b74-b5bd-7771619aa83b">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Date</ColumnID>
           </Source>
@@ -302,46 +294,14 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="c3ceacb2-b1e1-4235-be4a-3317f5ce2031">
-      <ID>Salaire Minimum</ID>
-      <Name>Salaire minimum</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="48438019-2e93-45bf-97ca-fd6792f2c5a5">
-          <DataType>Double</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="88e15030-95cf-4df3-868a-4ae984ea8ef8">
-            <TableID>dbo_DimOffre</TableID>
-            <ColumnID>SalaireMinimum</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="ad935658-5eab-4230-8bb0-7e978b351df0">
-      <ID>Salaire Maximum</ID>
-      <Name>Salaire maximum</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="3e2dcc40-ddbd-48a4-b158-ebc22c0b2bf6">
-          <DataType>Double</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b6ebeb62-0443-4b10-881e-5ef77023db26">
-            <TableID>dbo_DimOffre</TableID>
-            <ColumnID>SalaireMaximum</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="ebfec6fb-10d4-4c50-a2db-4146677a4a96">
+    <Attribute dwd:design-time-name="fb9aa3b0-0463-42f8-8c68-fbcd19a5a061">
       <ID>Code Postal  Ville</ID>
       <Name>Code Postal  Ville</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="6e388c85-557f-4987-bb60-f7e4bd6bc8e5">
+        <KeyColumn dwd:design-time-name="6fa66726-fc20-4cc0-a527-1ce244519449">
           <DataType>WChar</DataType>
           <DataSize>111</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="34e49f77-5609-4c62-a439-7785d754f02e">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3d3638d1-6bb0-45c3-a2ae-2ef9c74b2035">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Code_x0020_postal_x0020__x002F__x0020_Ville</ColumnID>
           </Source>
@@ -350,13 +310,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e7afa0c8-0640-4d70-a065-c34e90b1ac51">
+    <Attribute dwd:design-time-name="e3ce3812-74b6-4cc5-a06a-0137f95adb8d">
       <ID>Departement Key</ID>
       <Name>DepartementKey</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="74947b9e-8715-4a71-9ee0-3e59927974f5">
+        <KeyColumn dwd:design-time-name="a333afb9-b77a-4431-9b22-499dccd075ce">
           <DataType>Integer</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="7ac8468f-b126-4ee6-a7a0-577f5c8d1311">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a54ed129-d6b2-467c-8d11-f3533a16aa5a">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>DepartementKey</ColumnID>
           </Source>
@@ -366,29 +326,13 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="f35d63bb-4d72-4737-8dca-0a103ae102d6">
-      <ID>Salaire Moyen</ID>
-      <Name>Salaire moyen</Name>
-      <KeyColumns>
-        <KeyColumn dwd:design-time-name="595fce11-a0a4-450a-aae1-c692105add30">
-          <DataType>Double</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="0788de6c-f8ac-4161-882e-b36cbc142231">
-            <TableID>dbo_DimOffre</TableID>
-            <ColumnID>SalaireMoyen</ColumnID>
-          </Source>
-        </KeyColumn>
-      </KeyColumns>
-      <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
-      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
-      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
-    </Attribute>
-    <Attribute dwd:design-time-name="657abaf3-1d3b-4168-9b9d-a5e22d0a555c">
+    <Attribute dwd:design-time-name="75bddac8-8ffe-4cf9-bfcf-d5f5cd614693">
       <ID>Latitude</ID>
       <Name>Latitude</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="a83f8614-57c1-4ada-a51b-b028e3141465">
+        <KeyColumn dwd:design-time-name="93222718-e378-4eff-870c-564b19af2bb1">
           <DataType>Double</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="57086bc8-044f-4d9f-bd93-1a48cd0dbd51">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="eae735c8-c7f8-40d7-95aa-531786011687">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Latitude</ColumnID>
           </Source>
@@ -398,19 +342,34 @@
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="4fec39a5-70eb-4a03-9055-f1c5f6366a6b">
+    <Attribute dwd:design-time-name="36c8b414-3609-4179-98ba-cb0de383734e">
       <ID>Longitude</ID>
       <Name>Longitude</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="79423be6-a589-4dc4-8736-38484bd1f63d">
+        <KeyColumn dwd:design-time-name="1eb43c1a-38ef-4f8b-bdf1-7c83f2313377">
           <DataType>Double</DataType>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="b41d3504-09b6-4aa9-b534-ea2eba5c3325">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="3e38025f-d92c-4843-a08a-cdaf3f456bf9">
             <TableID>dbo_DimOffre</TableID>
             <ColumnID>Longitude</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeHierarchyEnabled>false</AttributeHierarchyEnabled>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="97b65005-2c2c-4e54-b9ba-f9c40fdfd687">
+      <ID>Salaire</ID>
+      <Name>Salaire</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="75c5cf10-c761-4705-9233-ef0679a68017">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="2c25a58a-874e-4142-b31c-b7674eb729e2">
+            <TableID>dbo_DimOffre</TableID>
+            <ColumnID>Salaire</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>

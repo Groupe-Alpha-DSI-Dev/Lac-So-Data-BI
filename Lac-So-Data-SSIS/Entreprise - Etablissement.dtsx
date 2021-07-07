@@ -7,12 +7,12 @@
   DTS:CreatorName="ALPHA\DIAWA"
   DTS:DTSID="{F0567256-FE98-48F1-ACF2-9B483B685B99}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.132"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
   DTS:LocaleID="1036"
   DTS:ObjectName="Entreprise - Etablissement"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{08600CEF-01D9-41C4-B7BF-D60824FCF1B3}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{58857A12-4180-4839-81BB-83266DAB5B87}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,6 +23,8 @@
       DTS:ObjectName="LAC_DWH_ENTREPRISES">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_DWH_ENTREPRISES;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -33,6 +35,8 @@
       DTS:ObjectName="LAC_STG_SIRENE">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=PROSQLC20\DEV;Initial Catalog=LAC_STG_SIRENE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -2415,27 +2419,35 @@
       DTS:To="Package\Copy DimCategorieJuridique" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
-<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
-<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171.2,41.6"
+          Size="197,42"
+          Id="Package\Copy DimArrondissement"
+          TopLeft="552.142866545794,127.34117788625" />
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Copy DimCategorieJuridique"
+          TopLeft="252.857147163274,310.470592589527" />
+        <NodeLayout
+          Size="171,42"
           Id="Package\Copy tmpEntreprise"
           TopLeft="265.714290239373,214.88235595482" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Copy tmpEtablissement"
           TopLeft="260.000004427774,113.176472175493" />
         <NodeLayout
-          Size="188.8,41.6"
+          Size="189,42"
           Id="Package\Truncate tables"
           TopLeft="260.000004427774,11.4705883961648" />
         <EdgeLayout
@@ -2482,24 +2494,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="211.2,41.6"
-          Id="Package\Copy DimCategorieJuridique"
-          TopLeft="252.857147163274,310.470592589527" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="354.885718701324,256.48235595482">
+          TopLeft="355.035718701324,256.88235595482">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.9882366347071"
+              EndConnector="0,53.588236634707"
               Start="0,0"
-              End="0,46.4882366347071">
+              End="0,46.088236634707">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.4882366347071" />
+                    End="0,46.088236634707" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2508,13 +2516,139 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="196.8,41.6"
-          Id="Package\Copy DimArrondissement"
-          TopLeft="552.142866545794,127.34117788625" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Copy DimArrondissement">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Copy DimArrondissement\Source OLE DB"
+          TopLeft="232,185" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Copy DimArrondissement\Destination OLE DB"
+          TopLeft="603,187" />
+        <EdgeLayout
+          Id="Package\Copy DimArrondissement.Paths[Sortie de source OLE DB]"
+          TopLeft="381.6,206.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="221.4,0"
+              Start="0,0"
+              End="213.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="213.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimArrondissement\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimArrondissement\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Copy DimCategorieJuridique">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Copy DimCategorieJuridique\DimCategorieJuridique"
+          TopLeft="620,164" />
+        <NodeLayout
+          Size="181,42"
+          Id="Package\Copy DimCategorieJuridique\datCatégorieJuridique"
+          TopLeft="165,168" />
+        <EdgeLayout
+          Id="Package\Copy DimCategorieJuridique.Paths[Sortie de source OLE DB]"
+          TopLeft="346,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="274,0"
+              Start="0,0"
+              End="266.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="266.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimCategorieJuridique\datCatégorieJuridique">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy DimCategorieJuridique\DimCategorieJuridique">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Copy tmpEntreprise">
     <LayoutInfo>
@@ -2587,11 +2721,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="161.6,41.6"
+          Size="162,42"
           Id="Package\Copy tmpEtablissement\tmpEtablissement"
           TopLeft="477.142865268552,137.647060753978" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Copy tmpEtablissement\DimEtablissement"
           TopLeft="116.428573411338,136.8823548609" />
         <EdgeLayout
@@ -2634,134 +2768,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Copy tmpEtablissement\tmpEtablissement">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Copy DimCategorieJuridique">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="180.8,41.6"
-          Id="Package\Copy DimCategorieJuridique\datCatégorieJuridique"
-          TopLeft="165,168" />
-        <NodeLayout
-          Size="184,41.6"
-          Id="Package\Copy DimCategorieJuridique\DimCategorieJuridique"
-          TopLeft="621,165" />
-        <EdgeLayout
-          Id="Package\Copy DimCategorieJuridique.Paths[Sortie de source OLE DB]"
-          TopLeft="345.8,187.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="275.2,0"
-              Start="0,0"
-              End="267.7,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="267.7,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy DimCategorieJuridique\datCatégorieJuridique">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy DimCategorieJuridique\DimCategorieJuridique">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Copy DimArrondissement">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Copy DimArrondissement\Source OLE DB"
-          TopLeft="232,185" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Copy DimArrondissement\Destination OLE DB"
-          TopLeft="603,187" />
-        <EdgeLayout
-          Id="Package\Copy DimArrondissement.Paths[Sortie de source OLE DB]"
-          TopLeft="381.6,206.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="221.4,0"
-              Start="0,0"
-              End="213.9,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="213.9,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy DimArrondissement\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy DimArrondissement\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
